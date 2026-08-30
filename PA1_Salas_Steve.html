@@ -1,683 +1,977 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Producto Académico N.º 1 - Steve Fernando Salas Velarde</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+<meta charset="UTF-8">
+<title>PA1 - Steve Fernando Salas Velarde - Desarrollo de Videojuegos</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Source+Sans+3:wght@300;400;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 
-        @page {
-            size: A4 portrait;
-            margin: 0;
-        }
+@page {
+    size: A4 portrait;
+    margin: 0;
+}
+@page cover { margin: 0; }
+@page content {
+    margin: 20mm 22mm 18mm 22mm;
+    @top-left {
+        content: "Desarrollo de Videojuegos — PA N.º 1";
+        font-family: 'Source Sans 3', sans-serif;
+        font-size: 7.5pt;
+        color: #94a3b8;
+        border-bottom: 0.5px solid #e2e8f0;
+        padding-bottom: 2px;
+    }
+    @top-right {
+        content: "Steve Fernando Salas Velarde";
+        font-family: 'Source Sans 3', sans-serif;
+        font-size: 7.5pt;
+        color: #94a3b8;
+    }
+    @bottom-right {
+        content: counter(page);
+        font-family: 'Source Sans 3', sans-serif;
+        font-size: 8pt;
+        font-weight: 600;
+        color: #475569;
+    }
+    @bottom-left {
+        content: "Universidad Continental";
+        font-family: 'Source Sans 3', sans-serif;
+        font-size: 7.5pt;
+        color: #94a3b8;
+    }
+}
 
-        * {
-            box-sizing: border-box;
-            -webkit-print-color-adjust: exact;
-            print-color-adjust: exact;
-        }
+*, *::before, *::after {
+    box-sizing: border-box;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+}
 
-        body {
-            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            color: #0f172a;
-            background-color: #ffffff;
-            margin: 0;
-            padding: 0;
-            font-size: 9pt;
-            line-height: 1.45;
-        }
+body {
+    font-family: 'Source Sans 3', 'Segoe UI', sans-serif;
+    color: #1e293b;
+    background: #fff;
+    margin: 0;
+    padding: 0;
+    line-height: 1.55;
+    font-size: 9.8pt;
+}
 
-        /* ========================================================================= */
-        /* CARÁTULA / PORTADA FORMAL (PÁGINA 1) */
-        /* ========================================================================= */
-        .cover-page {
-            width: 210mm;
-            height: 297mm;
-            padding: 22mm 24mm 20mm 24mm;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
-            position: relative;
-            page-break-after: always;
-        }
+/* =========================================================
+   CARÁTULA — PÁGINA 1
+========================================================= */
+.cover {
+    width: 210mm;
+    height: 297mm;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    page-break-after: always;
+    overflow: hidden;
+}
 
-        .cover-border-top {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 10px;
-            background: linear-gradient(90deg, #0f766e 0%, #0284c7 100%);
-        }
+/* Franja lateral izquierda institucional */
+.cover-stripe {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 14mm;
+    background: linear-gradient(180deg, #0c4a6e 0%, #0f766e 100%);
+}
 
-        .cover-header {
-            text-align: center;
-            margin-top: 10px;
-        }
+.cover-stripe-accent {
+    position: absolute;
+    left: 14mm;
+    top: 0;
+    bottom: 0;
+    width: 2.5px;
+    background: linear-gradient(180deg, #38bdf8 0%, #2dd4bf 100%);
+}
 
-        .cover-uni-name {
-            font-size: 15pt;
-            font-weight: 800;
-            color: #0f172a;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            margin: 0 0 4px 0;
-        }
+/* Franja decorativa horizontal inferior */
+.cover-bottom-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 14mm;
+    background: linear-gradient(90deg, #0c4a6e 0%, #0f766e 60%, #0284c7 100%);
+}
 
-        .cover-faculty {
-            font-size: 10.5pt;
-            font-weight: 700;
-            color: #0f766e;
-            text-transform: uppercase;
-            letter-spacing: 0.8px;
-            margin: 0 0 3px 0;
-        }
+.cover-inner {
+    margin-left: 20mm;
+    padding: 18mm 22mm 20mm 14mm;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 
-        .cover-career {
-            font-size: 9.5pt;
-            font-weight: 600;
-            color: #475569;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
+/* Encabezado institucional */
+.cover-uni-block {
+    border-bottom: 1px solid #cbd5e1;
+    padding-bottom: 12px;
+    margin-bottom: 18px;
+}
 
-        .cover-divider {
-            width: 70px;
-            height: 3px;
-            background: #0f766e;
-            margin: 16px auto;
-            border-radius: 2px;
-        }
+.cover-uni-logo-text {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 6px;
+}
 
-        .cover-body {
-            text-align: center;
-            margin: 20px 0;
-        }
+.cover-logo-circle {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #0c4a6e, #0f766e);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 800;
+    font-size: 13pt;
+    flex-shrink: 0;
+}
 
-        .cover-badge {
-            display: inline-block;
-            background-color: #f0fdfa;
-            border: 1.5px solid #0f766e;
-            color: #0f766e;
-            font-size: 8.5pt;
-            font-weight: 800;
-            padding: 4px 14px;
-            border-radius: 20px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 16px;
-        }
+.cover-uni-name {
+    font-family: 'Merriweather', Georgia, serif;
+    font-size: 13pt;
+    font-weight: 700;
+    color: #0c4a6e;
+    letter-spacing: 0.2px;
+    margin: 0;
+    line-height: 1.2;
+}
 
-        .cover-title {
-            font-size: 21pt;
-            font-weight: 800;
-            color: #0f172a;
-            line-height: 1.25;
-            letter-spacing: -0.5px;
-            margin: 0 0 10px 0;
-        }
+.cover-faculty {
+    font-size: 8.5pt;
+    font-weight: 600;
+    color: #0f766e;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-top: 2px;
+}
 
-        .cover-subtitle {
-            font-size: 12pt;
-            font-weight: 600;
-            color: #334155;
-            line-height: 1.4;
-            max-width: 90%;
-            margin: 0 auto;
-        }
+.cover-career {
+    font-size: 8pt;
+    color: #64748b;
+    font-weight: 400;
+    margin-top: 1px;
+}
 
-        .cover-info-card {
-            background-color: #ffffff;
-            border: 1px solid #cbd5e1;
-            border-radius: 8px;
-            padding: 16px 20px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-            max-width: 90%;
-            margin: 0 auto;
-            text-align: left;
-        }
+/* Cuerpo central de la carátula */
+.cover-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px 0 20px 0;
+}
 
-        .cover-info-table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 9pt;
-        }
+.cover-type-label {
+    font-size: 8.5pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #0f766e;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
 
-        .cover-info-table td {
-            padding: 6px 8px;
-            vertical-align: top;
-            border-bottom: 1px solid #f1f5f9;
-        }
+.cover-type-label::before {
+    content: '';
+    display: inline-block;
+    width: 24px;
+    height: 2px;
+    background: #0f766e;
+    border-radius: 2px;
+}
 
-        .cover-info-table tr:last-child td {
-            border-bottom: none;
-        }
+.cover-doc-title {
+    font-family: 'Merriweather', Georgia, serif;
+    font-size: 24pt;
+    font-weight: 700;
+    color: #0f172a;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+    margin: 0 0 8px 0;
+}
 
-        .cover-info-label {
-            width: 28%;
-            font-weight: 700;
-            color: #475569;
-            text-transform: uppercase;
-            font-size: 8pt;
-            letter-spacing: 0.3px;
-        }
+.cover-doc-subtitle {
+    font-size: 12pt;
+    font-weight: 300;
+    color: #334155;
+    line-height: 1.4;
+    margin: 0 0 4px 0;
+    font-style: italic;
+    font-family: 'Merriweather', Georgia, serif;
+}
 
-        .cover-info-val {
-            font-weight: 600;
-            color: #0f172a;
-        }
+.cover-quote {
+    font-size: 10.5pt;
+    font-weight: 600;
+    color: #0f766e;
+    margin: 6px 0 24px 0;
+    padding-left: 12px;
+    border-left: 3px solid #0f766e;
+    font-style: italic;
+    font-family: 'Merriweather', serif;
+}
 
-        .cover-footer {
-            text-align: center;
-            border-top: 1px solid #e2e8f0;
-            padding-top: 12px;
-            font-size: 8.5pt;
-            font-weight: 600;
-            color: #64748b;
-        }
+/* Cuadro de datos del alumno */
+.cover-student-card {
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-top: 3px solid #0f766e;
+    border-radius: 0 0 6px 6px;
+    padding: 14px 18px;
+}
 
-        /* ========================================================================= */
-        /* PÁGINAS DE CONTENIDO (PÁGINAS 2 Y 3) */
-        /* ========================================================================= */
-        .content-page {
-            width: 210mm;
-            min-height: 297mm;
-            padding: 16mm 20mm 16mm 20mm;
-            position: relative;
-        }
+.cover-student-row {
+    display: flex;
+    font-size: 8.8pt;
+    margin-bottom: 5px;
+    gap: 8px;
+}
 
-        .page-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1.5px solid #0f766e;
-            padding-bottom: 6px;
-            margin-bottom: 12px;
-            font-size: 8pt;
-            color: #64748b;
-            font-weight: 600;
-        }
+.cover-student-row:last-child {
+    margin-bottom: 0;
+}
 
-        .section-header {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            border-bottom: 1.5px solid #e2e8f0;
-            padding-bottom: 4px;
-            margin-top: 14px;
-            margin-bottom: 10px;
-        }
+.cs-label {
+    font-weight: 700;
+    color: #64748b;
+    min-width: 90px;
+    text-transform: uppercase;
+    font-size: 7.5pt;
+    letter-spacing: 0.3px;
+    padding-top: 1px;
+}
 
-        .section-number {
-            background-color: #0f766e;
-            color: #ffffff;
-            font-size: 8.5pt;
-            font-weight: 800;
-            width: 20px;
-            height: 20px;
-            border-radius: 4px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+.cs-val {
+    font-weight: 600;
+    color: #0f172a;
+}
 
-        .section-name {
-            font-size: 11pt;
-            font-weight: 800;
-            color: #0f172a;
-            letter-spacing: -0.2px;
-        }
+/* Año en la parte inferior */
+.cover-year-block {
+    color: #ffffff;
+    text-align: right;
+    font-size: 8pt;
+    font-weight: 600;
+    padding-right: 2mm;
+    padding-bottom: 4mm;
+    position: absolute;
+    bottom: 4mm;
+    right: 22mm;
+}
 
-        /* TARJETAS DE ENLACE */
-        .links-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
-            margin-bottom: 12px;
-        }
+/* =========================================================
+   PÁGINAS DE CONTENIDO
+========================================================= */
+.page {
+    width: 210mm;
+    padding: 20mm 22mm 18mm 22mm;
+    page-break-after: always;
+    min-height: 297mm;
+}
 
-        .link-card {
-            background-color: #ffffff;
-            border: 1.5px solid #cbd5e1;
-            border-radius: 6px;
-            padding: 10px 12px;
-        }
+.page:last-child {
+    page-break-after: avoid;
+}
 
-        .link-card.primary {
-            border-color: #0f766e;
-            background: linear-gradient(180deg, #f0fdfa 0%, #ffffff 100%);
-        }
+/* Encabezado de página */
+.page-cap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #0f766e;
+    padding-bottom: 5px;
+    margin-bottom: 16px;
+}
 
-        .link-card.secondary {
-            border-color: #0284c7;
-            background: linear-gradient(180deg, #f0f9ff 0%, #ffffff 100%);
-        }
+.page-cap-left {
+    font-family: 'Merriweather', serif;
+    font-size: 9.5pt;
+    font-weight: 700;
+    color: #0f172a;
+}
 
-        .card-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 3px;
-        }
+.page-cap-right {
+    font-size: 7.5pt;
+    color: #94a3b8;
+    font-weight: 600;
+}
 
-        .card-title {
-            font-size: 8.8pt;
-            font-weight: 700;
-            color: #0f172a;
-        }
+/* Título de secciones con estilo editorial */
+.section-h {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin: 18px 0 10px 0;
+}
 
-        .card-badge {
-            font-size: 6.8pt;
-            font-weight: 700;
-            padding: 2px 6px;
-            border-radius: 3px;
-            text-transform: uppercase;
-        }
+.section-num {
+    font-family: 'Merriweather', serif;
+    font-size: 20pt;
+    font-weight: 700;
+    color: #e2e8f0;
+    line-height: 1;
+    min-width: 24px;
+    margin-top: -2px;
+}
 
-        .card-badge.green {
-            background-color: #ccfbf1;
-            color: #0f766e;
-        }
+.section-text-block {
+    flex: 1;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 4px;
+}
 
-        .card-badge.blue {
-            background-color: #e0f2fe;
-            color: #0369a1;
-        }
+.section-title {
+    font-family: 'Merriweather', Georgia, serif;
+    font-size: 11pt;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0;
+    line-height: 1.3;
+}
 
-        .card-url {
-            font-family: 'JetBrains Mono', Consolas, monospace;
-            font-size: 7.8pt;
-            font-weight: 600;
-            display: block;
-            margin-bottom: 3px;
-            word-break: break-all;
-            text-decoration: none;
-        }
+.section-desc {
+    font-size: 8pt;
+    color: #64748b;
+    margin: 1px 0 0 0;
+    font-style: italic;
+}
 
-        .link-card.primary .card-url { color: #0f766e; }
-        .link-card.secondary .card-url { color: #0284c7; }
+/* Texto del cuerpo */
+p {
+    margin: 0 0 8px 0;
+    text-align: justify;
+    hyphens: auto;
+    font-size: 9.5pt;
+    color: #334155;
+}
 
-        .card-desc {
-            font-size: 7.6pt;
-            color: #64748b;
-            line-height: 1.35;
-        }
+p strong {
+    color: #0f172a;
+}
 
-        /* TABLA DE PARÁMETROS */
-        .data-table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 8.2pt;
-            margin: 8px 0 12px 0;
-        }
+/* Tarjetas de enlace */
+.card-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin: 8px 0 14px 0;
+}
 
-        .data-table th {
-            background-color: #1e293b;
-            color: #ffffff;
-            font-weight: 700;
-            font-size: 7.5pt;
-            text-transform: uppercase;
-            letter-spacing: 0.4px;
-            padding: 6px 8px;
-            border: 1px solid #1e293b;
-            text-align: left;
-        }
+.link-card {
+    border-radius: 6px;
+    padding: 10px 12px;
+    border: 1px solid #e2e8f0;
+    background: #fff;
+}
 
-        .data-table td {
-            border: 1px solid #cbd5e1;
-            padding: 6px 8px;
-            vertical-align: middle;
-        }
+.link-card.gh {
+    border-top: 3px solid #0f766e;
+}
 
-        .data-table tr:nth-child(even) {
-            background-color: #f8fafc;
-        }
+.link-card.yt {
+    border-top: 3px solid #dc2626;
+}
 
-        .param-badge {
-            font-family: 'JetBrains Mono', Consolas, monospace;
-            background-color: #f1f5f9;
-            color: #0f766e;
-            font-weight: 700;
-            font-size: 7.8pt;
-            padding: 2px 5px;
-            border-radius: 3px;
-            border: 1px solid #cbd5e1;
-            white-space: nowrap;
-        }
+.lc-title {
+    font-weight: 700;
+    font-size: 9pt;
+    color: #0f172a;
+    margin-bottom: 2px;
+}
 
-        /* CAJA DE LLAMADA */
-        .callout-box {
-            background-color: #f8fafc;
-            border: 1px solid #e2e8f0;
-            border-left: 3.5px solid #0f766e;
-            border-radius: 0 5px 5px 0;
-            padding: 8px 12px;
-            margin-bottom: 10px;
-            font-size: 8.4pt;
-        }
+.lc-tag {
+    display: inline-block;
+    font-size: 6.8pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 1px 6px;
+    border-radius: 3px;
+    margin-bottom: 5px;
+}
 
-        .callout-title {
-            font-weight: 700;
-            color: #0f172a;
-            font-size: 8.8pt;
-            margin-bottom: 3px;
-        }
+.lc-tag.teal { background: #ccfbf1; color: #0f766e; }
+.lc-tag.red  { background: #fee2e2; color: #dc2626; }
 
-        .prompt-quote {
-            background-color: #f1f5f9;
-            border: 1px dashed #cbd5e1;
-            padding: 5px 8px;
-            font-style: italic;
-            font-size: 7.6pt;
-            color: #334155;
-            border-radius: 3px;
-            margin: 4px 0;
-            font-family: 'JetBrains Mono', monospace;
-        }
+.lc-url {
+    font-family: 'JetBrains Mono', Consolas, monospace;
+    font-size: 7.6pt;
+    font-weight: 500;
+    color: #0f766e;
+    display: block;
+    margin-bottom: 4px;
+    word-break: break-all;
+    text-decoration: none;
+}
 
-        /* CÓDIGO FUENTE */
-        .code-wrapper {
-            background-color: #0f172a;
-            border-radius: 6px;
-            padding: 10px 12px;
-            margin-top: 6px;
-        }
+.link-card.yt .lc-url { color: #dc2626; }
 
-        .code-content {
-            color: #e2e8f0;
-            font-family: 'JetBrains Mono', Consolas, monospace;
-            font-size: 7.3pt;
-            line-height: 1.35;
-            white-space: pre;
-            margin: 0;
-        }
+.lc-desc {
+    font-size: 7.8pt;
+    color: #64748b;
+    line-height: 1.4;
+}
 
-        .page-break {
-            page-break-before: always;
-        }
+/* Tabla de parámetros */
+table.params {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 8.4pt;
+    margin: 8px 0 14px 0;
+}
 
-        .page-footer {
-            border-top: 1px solid #cbd5e1;
-            padding-top: 5px;
-            margin-top: 12px;
-            display: flex;
-            justify-content: space-between;
-            font-size: 7.2pt;
-            color: #64748b;
-        }
-    </style>
+table.params th {
+    background: #1e293b;
+    color: #f8fafc;
+    font-weight: 700;
+    font-size: 7.5pt;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 6px 9px;
+    border: 1px solid #1e293b;
+    text-align: left;
+}
+
+table.params td {
+    border: 1px solid #e2e8f0;
+    padding: 6px 9px;
+    vertical-align: middle;
+    color: #334155;
+}
+
+table.params tr:nth-child(even) td {
+    background: #f8fafc;
+}
+
+.mono {
+    font-family: 'JetBrains Mono', Consolas, monospace;
+    background: #f1f5f9;
+    color: #0f766e;
+    font-weight: 600;
+    font-size: 7.7pt;
+    padding: 1px 5px;
+    border-radius: 3px;
+    border: 1px solid #e2e8f0;
+    white-space: nowrap;
+}
+
+/* Tabla de commits */
+table.commits {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 8.3pt;
+    margin: 8px 0 14px 0;
+}
+
+table.commits th {
+    background: #f1f5f9;
+    color: #334155;
+    font-weight: 700;
+    font-size: 7.5pt;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    padding: 5px 8px;
+    border: 1px solid #e2e8f0;
+    text-align: left;
+}
+
+table.commits td {
+    border: 1px solid #e2e8f0;
+    padding: 5px 8px;
+    vertical-align: middle;
+    color: #334155;
+}
+
+table.commits .hash {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 7.5pt;
+    color: #0f766e;
+    font-weight: 600;
+}
+
+table.commits .date {
+    color: #64748b;
+    font-size: 7.8pt;
+    white-space: nowrap;
+}
+
+/* Callout / nota lateral */
+.callout {
+    border-left: 3.5px solid #0f766e;
+    background: #f0fdfa;
+    padding: 8px 12px;
+    border-radius: 0 5px 5px 0;
+    margin: 8px 0 12px 0;
+    font-size: 8.8pt;
+    color: #1e293b;
+}
+
+.callout-title {
+    font-weight: 700;
+    font-size: 9pt;
+    margin-bottom: 4px;
+    color: #0f172a;
+}
+
+.prompt-box {
+    background: #f8fafc;
+    border: 1px dashed #cbd5e1;
+    border-radius: 4px;
+    padding: 6px 10px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 7.8pt;
+    font-style: italic;
+    color: #475569;
+    margin: 5px 0;
+    line-height: 1.4;
+}
+
+/* Bloque de código */
+.code-wrap {
+    background: #0f172a;
+    border-radius: 7px;
+    padding: 12px 14px;
+    margin-top: 6px;
+}
+
+.code-wrap pre {
+    margin: 0;
+    font-family: 'JetBrains Mono', Consolas, monospace;
+    font-size: 7.3pt;
+    line-height: 1.37;
+    color: #e2e8f0;
+    white-space: pre;
+}
+
+/* Cintillo de referencia al final */
+.ref-footer {
+    margin-top: 16px;
+    border-top: 1px solid #e2e8f0;
+    padding-top: 8px;
+    font-size: 7.5pt;
+    color: #94a3b8;
+    display: flex;
+    justify-content: space-between;
+}
+</style>
 </head>
 <body>
 
-    <!-- ========================================================================= -->
-    <!-- PÁGINA 1: CARÁTULA FORMAL INSTITUCIONAL -->
-    <!-- ========================================================================= -->
-    <div class="cover-page">
-        <div class="cover-border-top"></div>
+<!-- ============================================================
+     PÁGINA 1 — CARÁTULA INSTITUCIONAL
+============================================================ -->
+<div class="cover">
+    <div class="cover-stripe"></div>
+    <div class="cover-stripe-accent"></div>
+    <div class="cover-bottom-bar"></div>
 
-        <div class="cover-header">
-            <div class="cover-uni-name">Universidad Continental</div>
+    <div class="cover-inner">
+
+        <!-- Membrete institucional -->
+        <div class="cover-uni-block">
+            <div class="cover-uni-logo-text">
+                <div class="cover-logo-circle">U</div>
+                <h1 class="cover-uni-name">Universidad Continental</h1>
+            </div>
             <div class="cover-faculty">Facultad de Ingeniería</div>
             <div class="cover-career">Escuela Profesional de Ingeniería de Sistemas e Informática</div>
-            <div class="cover-divider"></div>
         </div>
 
-        <div class="cover-body">
-            <div class="cover-badge">Evaluación para el Consolidado 1</div>
-            <h1 class="cover-title">PRODUCTO ACADÉMICO N.º 1</h1>
-            <div class="cover-subtitle">
-                Hito 1: Prototipo Funcional 2D y Game Feel<br>
-                <em>"El Laboratorio de Movimiento"</em>
+        <!-- Título principal -->
+        <div class="cover-main">
+            <div class="cover-type-label">Evaluación de Consolidado 1</div>
+
+            <h2 class="cover-doc-title">Producto Académico<br>N.º 1</h2>
+            <div class="cover-doc-subtitle">Hito 1: Prototipo Funcional 2D y Game Feel</div>
+            <div class="cover-quote">"El Laboratorio de Movimiento"</div>
+
+            <!-- Cuadro de datos del alumno -->
+            <div class="cover-student-card">
+                <div class="cover-student-row">
+                    <span class="cs-label">Asignatura</span>
+                    <span class="cs-val">Desarrollo de Videojuegos</span>
+                </div>
+                <div class="cover-student-row">
+                    <span class="cs-label">Estudiante</span>
+                    <span class="cs-val">Steve Fernando Salas Velarde</span>
+                </div>
+                <div class="cover-student-row">
+                    <span class="cs-label">Motor / Versión</span>
+                    <span class="cs-val">Unity 6  (6000.5.10f1) — Universal Render Pipeline 2D</span>
+                </div>
+                <div class="cover-student-row">
+                    <span class="cs-label">Repositorio</span>
+                    <span class="cs-val">GitHub — github.com/SteveFernandoV/PA-1</span>
+                </div>
+                <div class="cover-student-row">
+                    <span class="cs-label">Modalidad</span>
+                    <span class="cs-val">Individual — Entrega Digital + Video Defensa</span>
+                </div>
             </div>
-        </div>
-
-        <div class="cover-info-card">
-            <table class="cover-info-table">
-                <tr>
-                    <td class="cover-info-label">Asignatura:</td>
-                    <td class="cover-info-val">Desarrollo de Videojuegos</td>
-                </tr>
-                <tr>
-                    <td class="cover-info-label">Estudiante:</td>
-                    <td class="cover-info-val">Steve Fernando Salas Velarde</td>
-                </tr>
-                <tr>
-                    <td class="cover-info-label">Motor & Versión:</td>
-                    <td class="cover-info-val">Unity 6 (6000.5.10f1) — Universal 2D Pipeline (URP)</td>
-                </tr>
-                <tr>
-                    <td class="cover-info-label">Control de Versiones:</td>
-                    <td class="cover-info-val">Git & GitHub (Repositorio Público Oficial)</td>
-                </tr>
-                <tr>
-                    <td class="cover-info-label">Modalidad:</td>
-                    <td class="cover-info-val">Individual / Prototipo Técnico</td>
-                </tr>
-            </table>
-        </div>
-
-        <div class="cover-footer">
-            Perú — 2026
         </div>
     </div>
 
-    <!-- ========================================================================= -->
-    <!-- PÁGINA 2: CONTENIDO DEL INFORME TÉCNICO -->
-    <!-- ========================================================================= -->
-    <div class="content-page">
-        <div class="page-header">
-            <span>Universidad Continental • Desarrollo de Videojuegos</span>
-            <span>Producto Académico N.º 1</span>
-        </div>
+    <div class="cover-year-block">Perú &nbsp;·&nbsp; 2026</div>
+</div>
 
-        <!-- SECCIÓN 1: ENLACES OFICIALES -->
-        <div class="section-header">
-            <div class="section-number">1</div>
-            <div class="section-name">Enlaces Oficiales de Entrega del Proyecto</div>
-        </div>
 
-        <div class="links-grid">
-            <div class="link-card primary">
-                <div class="card-header">
-                    <span class="card-title">📁 Repositorio de Código Fuente</span>
-                    <span class="card-badge green">Público • Verificado</span>
-                </div>
-                <a class="card-url" href="https://github.com/SteveFernandoV/PA-1" target="_blank">https://github.com/SteveFernandoV/PA-1</a>
-                <div class="card-desc">
-                    Contiene el proyecto completo en Unity 6, scripts en C# con documentación pedagógica, prefabs, animaciones y archivo <code>.gitignore</code> oficial que excluye la carpeta <code>Library/</code>.
-                </div>
+<!-- ============================================================
+     PÁGINA 2 — INTRODUCCIÓN, ESTRUCTURA Y ENLACES
+============================================================ -->
+<div class="page">
+
+    <div class="page-cap">
+        <span class="page-cap-left">Producto Académico N.º 1 — Hito 1</span>
+        <span class="page-cap-right">Desarrollo de Videojuegos</span>
+    </div>
+
+    <!-- Sección 1 -->
+    <div class="section-h">
+        <span class="section-num">1</span>
+        <div class="section-text-block">
+            <p class="section-title">Descripción General del Proyecto</p>
+            <p class="section-desc">Contexto, objetivos y estructura del prototipo</p>
+        </div>
+    </div>
+
+    <p>
+        El presente informe documenta el desarrollo del <strong>Hito 1: Prototipo Funcional 2D y Game Feel</strong>, correspondiente al primer producto académico evaluado del curso de Desarrollo de Videojuegos. El proyecto consistió en construir desde cero un prototipo jugable en <strong>Unity 6 (6000.5.10f1)</strong> bajo el paradigma de renderizado <em>Universal Render Pipeline 2D (URP)</em>, trabajando con física 2D nativa, animaciones por máquina de estados y control de versiones mediante Git.
+    </p>
+
+    <p>
+        El eje central del hito fue el concepto de <strong><em>Game Feel</em></strong>: esa percepción táctil e inmediata que tiene el jugador al interactuar con el personaje. Para lograrlo, se calibraron cuidadosamente los parámetros de velocidad, fuerza de salto y gravedad, eliminando cualquier sensación de inercia artificial o "patinaje" al moverse. El escenario de pruebas —denominado internamente "El Laboratorio de Movimiento"— concentra todas las mecánicas exigidas por la rúbrica en un solo nivel compacto y funcional.
+    </p>
+
+    <p>
+        La arquitectura del proyecto se organiza en carpetas especializadas: <em>Scripts</em> (lógica en C#), <em>Prefab</em> (objetos reutilizables), <em>Scenes</em> (escenario principal), <em>animations</em> (clips y controladores de animación), <em>sprites</em> (atlas gráfico del pack "Berie's Adventure") y <em>Music</em> (audio ambiental de fondo). Todo el historial de cambios está registrado en el repositorio oficial a través de commits descriptivos y un archivo <em>.gitignore</em> configurado con la plantilla oficial de Unity.
+    </p>
+
+    <!-- Sección 2 -->
+    <div class="section-h">
+        <span class="section-num">2</span>
+        <div class="section-text-block">
+            <p class="section-title">Enlace al Repositorio y Video-Defensa</p>
+            <p class="section-desc">Recursos de entrega oficial</p>
+        </div>
+    </div>
+
+    <div class="card-row">
+        <div class="link-card gh">
+            <div class="lc-title">📁 Repositorio de Código en GitHub</div>
+            <span class="lc-tag teal">Público · Verificado</span>
+            <a class="lc-url" href="https://github.com/SteveFernandoV/PA-1">https://github.com/SteveFernandoV/PA-1</a>
+            <div class="lc-desc">
+                Contiene la estructura completa del proyecto Unity 6, el script <code>PlayerController.cs</code> con documentación exhaustiva, prefabs configurados, animaciones y el <code>.gitignore</code> oficial que excluye las carpetas <code>Library/</code>, <code>Temp/</code> y <code>Logs/</code>. El historial de commits evidencia el avance progresivo durante el desarrollo.
             </div>
+        </div>
 
-            <div class="link-card secondary">
-                <div class="card-header">
-                    <span class="card-title">🎥 Grabación de Video-Defensa (2-3 min)</span>
-                    <span class="card-badge blue">YouTube • Oculto</span>
-                </div>
-                <a class="card-url" href="https://www.youtube.com" target="_blank">[ENLACE AL VIDEO DE YOUTUBE]</a>
-                <div class="card-desc">
-                    Cámara web activa mostrando rostro del estudiante y pantalla de Unity. Demuestra: físicas responsivas, salto condicional a suelo, barril empujable por física, monedas/UI y explicación de 1 min de <code>PlayerController.cs</code>.
-                </div>
+        <div class="link-card yt">
+            <div class="lc-title">🎥 Video-Defensa Técnica (2–3 min)</div>
+            <span class="lc-tag red">YouTube · Oculto</span>
+            <a class="lc-url" href="https://www.youtube.com">[PEGAR AQUÍ EL ENLACE DEL VIDEO]</a>
+            <div class="lc-desc">
+                Grabación con cámara web activa mostrando rostro del estudiante y pantalla completa de Unity. La demostración incluye: movimiento responsivo, salto con bloqueo de salto infinito, barril empujable como plataforma interactiva, recolección de monedas con UI en tiempo real y colisión con bombas destructibles con animación de detonación.
             </div>
         </div>
+    </div>
 
-        <!-- SECCIÓN 2: ARQUITECTURA TÉCNICA Y GAME FEEL -->
-        <div class="section-header">
-            <div class="section-number">2</div>
-            <div class="section-name">Arquitectura Técnica de Físicas y Calibración del "Game Feel"</div>
+    <!-- Sección 3 — Historial de commits -->
+    <div class="section-h">
+        <span class="section-num">3</span>
+        <div class="section-text-block">
+            <p class="section-title">Historial de Control de Versiones (Git)</p>
+            <p class="section-desc">Commits registrados en GitHub — Misión 1 del PA</p>
         </div>
+    </div>
 
-        <p style="font-size: 8.5pt; text-align: justify; margin-bottom: 6px;">
-            El desarrollo del <strong>Hito 1 ("El Laboratorio de Movimiento")</strong> implementó una base sólida de física 2D que proporciona una respuesta inmediata, predecible y libre de inercia flotante artificial, aplicando los principios del diseño de <em>Game Feel</em>:
+    <p>
+        A continuación se listan los commits realizados durante el desarrollo del prototipo, los cuales evidencian el proceso iterativo e incremental aplicado a lo largo del hito:
+    </p>
+
+    <table class="commits">
+        <thead>
+            <tr>
+                <th>Hash</th>
+                <th>Fecha</th>
+                <th>Descripción del Commit</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="hash">0a0a7f7</td>
+                <td class="date">27/08/2026</td>
+                <td>Registro inicial del repositorio con estructura base de Unity</td>
+            </tr>
+            <tr>
+                <td class="hash">b646356</td>
+                <td class="date">29/08/2026</td>
+                <td>Añadido escenario, personaje jugador y pack de recursos gráficos</td>
+            </tr>
+            <tr>
+                <td class="hash">ba34ea3</td>
+                <td class="date">29/08/2026</td>
+                <td>Añadidos obstáculos y música de fondo al nivel</td>
+            </tr>
+            <tr>
+                <td class="hash">7c77e02</td>
+                <td class="date">29/08/2026</td>
+                <td>Misiones 2 y 3: PlayerController con Game Feel responsivo y obstáculo físico empujable</td>
+            </tr>
+            <tr>
+                <td class="hash">e6d5334</td>
+                <td class="date">29/08/2026</td>
+                <td>Obstáculos actualizados a Bombas con animación de explosión y barril físico pesado</td>
+            </tr>
+            <tr>
+                <td class="hash">6180a20</td>
+                <td class="date">29/08/2026</td>
+                <td>Restaurada velocidad y salto inicial del personaje (speed: 2, jumpForce: 4, gravityScale: 1)</td>
+            </tr>
+            <tr>
+                <td class="hash">1da74be</td>
+                <td class="date">29/08/2026</td>
+                <td>Documentación exhaustiva y comentarios pedagógicos en PlayerController.cs</td>
+            </tr>
+            <tr>
+                <td class="hash">f5c3ba1</td>
+                <td class="date">30/08/2026</td>
+                <td>Asignada capa Floor (Layer 3) al barril empujable para usarlo como plataforma</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="ref-footer">
+        <span>Universidad Continental · Facultad de Ingeniería</span>
+        <span>Steve Fernando Salas Velarde · 2026</span>
+    </div>
+</div>
+
+
+<!-- ============================================================
+     PÁGINA 3 — ARQUITECTURA TÉCNICA Y GAME FEEL
+============================================================ -->
+<div class="page">
+
+    <div class="page-cap">
+        <span class="page-cap-left">Arquitectura Técnica y Calibración de Físicas</span>
+        <span class="page-cap-right">Desarrollo de Videojuegos · PA N.º 1</span>
+    </div>
+
+    <!-- Sección 4 -->
+    <div class="section-h">
+        <span class="section-num">4</span>
+        <div class="section-text-block">
+            <p class="section-title">Diseño Físico y Calibración del "Game Feel"</p>
+            <p class="section-desc">Parámetros de movimiento, salto, detección de suelo e interacciones</p>
+        </div>
+    </div>
+
+    <p>
+        El diseño de las físicas del personaje partió de un principio fundamental del diseño de videojuegos: <em>la sensación de control inmediato siempre debe priorizarse sobre el realismo físico</em>. Por eso, en lugar de aplicar una curva de aceleración natural, se optó por <strong>respuesta instantánea</strong> usando <code>Input.GetAxisRaw</code>, que retorna valores exactos de -1, 0 o 1 sin suavizado. La velocidad se aplica directamente sobre <code>rb2D.linearVelocity</code>, la API actualizada de Unity 6 para el control preciso de la velocidad del Rigidbody2D.
+    </p>
+
+    <p>
+        El sistema de salto fue uno de los aspectos más cuidadosamente ajustados. Se descartó el uso de <code>AddForce</code> para el salto porque generaba variaciones impredecibles dependiendo del peso y la fricción del suelo. En su lugar, se asigna directamente la componente Y de <code>linearVelocity</code>, garantizando siempre la misma altura de salto sin importar las condiciones del entorno.
+    </p>
+
+    <table class="params">
+        <thead>
+            <tr>
+                <th style="width:24%">Componente / Mecánica</th>
+                <th style="width:22%">Valor Configurado</th>
+                <th>Decisión de Diseño y Justificación Técnica</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Movimiento horizontal</strong></td>
+                <td><span class="mono">speed = 2.0f</span></td>
+                <td>Velocidad pausada y controlable. Combinada con <code>GetAxisRaw</code> elimina cualquier deslizamiento o aceleración artificial, logrando respuesta táctil inmediata al teclado.</td>
+            </tr>
+            <tr>
+                <td><strong>Salto</strong></td>
+                <td><span class="mono">jumpForce = 4.0f</span></td>
+                <td>Asignación directa sobre el eje Y de <code>linearVelocity</code>. Garantiza una parábola de salto consistente y predecible, calibrada para alcanzar las plataformas del nivel.</td>
+            </tr>
+            <tr>
+                <td><strong>Gravedad del personaje</strong></td>
+                <td><span class="mono">GravityScale = 1.0</span></td>
+                <td>Escala de gravedad estándar de Unity, elegida tras pruebas comparativas. Valores mayores aceleraban la caída de forma brusca, afectando negativamente la lectura del salto.</td>
+            </tr>
+            <tr>
+                <td><strong>Detección de suelo</strong></td>
+                <td><span class="mono">OverlapCircle (r = 0.1)</span></td>
+                <td>Círculo de colisión ubicado en el objeto <code>groundCheck</code> (pies del personaje), filtrado por la <code>groundLayer</code>. Impide de manera estricta el doble salto o el salto en pleno aire.</td>
+            </tr>
+            <tr>
+                <td><strong>Barril empujable / plataforma</strong></td>
+                <td><span class="mono">Mass=3.5 · Damping=3.0</span></td>
+                <td><code>Rigidbody2D</code> dinámico asignado a la capa <code>Floor</code> (Layer 3). Permite al jugador empujarlo con resistencia física sólida, subirse encima y saltar desde su superficie, añadiendo variedad estratégica al nivel.</td>
+            </tr>
+            <tr>
+                <td><strong>Bombas (obstáculos destructibles)</strong></td>
+                <td><span class="mono">Knockback = 3.0f</span></td>
+                <td>Al colisionar, se calcula el vector de dirección opuesto al impacto y se aplica un impulso sobre el jugador. Los colliders del obstáculo se desactivan, el Animator de la bomba se habilita reproduciendo la animación de 9 fotogramas, y el objeto se destruye tras 0.5 segundos.</td>
+            </tr>
+            <tr>
+                <td><strong>Monedas (coleccionables)</strong></td>
+                <td><span class="mono">Trigger 2D + TMP_Text</span></td>
+                <td>Collider configurado como <em>Is Trigger</em>. Al detectarse contacto en <code>OnTriggerEnter2D</code>, la moneda se destruye, el contador interno se incrementa y la UI de TextMeshPro se actualiza en tiempo real.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Sección 5 -->
+    <div class="section-h">
+        <span class="section-num">5</span>
+        <div class="section-text-block">
+            <p class="section-title">Bitácora Digital de Desarrollo</p>
+            <p class="section-desc">Registro de decisiones técnicas y transparencia en el uso de IA</p>
+        </div>
+    </div>
+
+    <p>
+        A lo largo del desarrollo se tomaron varias decisiones técnicas relevantes que vale la pena registrar. La primera fue migrar el script original <code>player.cs</code> (heredado del proyecto base) a una nueva clase <code>PlayerController.cs</code> con encapsulamiento formal mediante <code>[SerializeField]</code>, lo que permitió ajustar todos los parámetros de físicas directamente desde el Inspector de Unity sin necesidad de recompilar el código en cada iteración. Esta práctica es considerada una buena práctica estándar en el desarrollo profesional de videojuegos.
+    </p>
+
+    <p>
+        La segunda decisión fue separar la detección de suelo en <code>FixedUpdate()</code> en lugar de hacerla en <code>Update()</code>. Esto se debe a que <code>FixedUpdate</code> está sincronizado con el motor de físicas de Unity, ejecutándose a intervalos constantes de tiempo fijo (50 veces por segundo), mientras que <code>Update</code> depende del framerate variable del hardware. Hacer la detección en el ciclo incorrecto puede causar falsos positivos de colisión a altas velocidades.
+    </p>
+
+    <div class="callout">
+        <div class="callout-title">Declaración de Uso de Inteligencia Artificial</div>
+        <p style="font-size:8.2pt; margin-bottom:4px;">En apego a las directrices éticas del curso, se declara el uso de asistencia de IA para apoyo en la arquitectura y documentación del código:</p>
+        <div class="prompt-box">"Optimizar la arquitectura del script PlayerController en C# para Unity 6 aplicando buenas prácticas de encapsulamiento con [SerializeField], documentación pedagógica bloque por bloque, detección de suelo con OverlapCircle y compatibilidad con la API linearVelocity de Unity 6."</div>
+        <p style="font-size:8.2pt; margin:0;">
+            <strong>Adaptación realizada:</strong> El código generado fue revisado, corregido manualmente y enriquecido con la lógica específica del proyecto (manejo de tags personalizados, capa Floor para el barril, sincronización con el Animator de las bombas y el contador de TextMeshPro). El diseño de niveles, la selección de assets gráficos y la calibración de Game Feel fueron realizados íntegramente de forma manual en Unity.
         </p>
+    </div>
 
-        <table class="data-table">
-            <thead>
-                <tr>
-                    <th style="width: 25%;">Componente / Mecánica</th>
-                    <th style="width: 22%;">Configuración en Inspector</th>
-                    <th>Lógica de Ingeniería y Justificación de Game Feel</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>Movimiento Horizontal</strong></td>
-                    <td><span class="param-badge">speed = 2.0f</span></td>
-                    <td>Lectura por <code>Input.GetAxisRaw</code> y asignación en <code>rb2D.linearVelocity</code>. Elimina retardos de aceleración/frenado, dando control instantáneo al jugador.</td>
-                </tr>
-                <tr>
-                    <td><strong>Salto y Gravedad</strong></td>
-                    <td><span class="param-badge">jumpForce = 4.0 / Grav = 1.0</span></td>
-                    <td>Trayectoria parabólica equilibrada y proporcional a la escala y separación de las plataformas del nivel de pruebas.</td>
-                </tr>
-                <tr>
-                    <td><strong>Detección de Suelo</strong></td>
-                    <td><span class="param-badge">OverlapCircle (r = 0.1)</span></td>
-                    <td>Chequeo físico en <code>groundCheck</code> con máscara de capa <code>groundLayer</code>. Evita rigurosamente saltos dobles o infinitos en el aire.</td>
-                </tr>
-                <tr>
-                    <td><strong>Barril Empujable / Plataforma</strong></td>
-                    <td><span class="param-badge">Mass = 3.5 / Damping = 3.0</span></td>
-                    <td><code>Rigidbody2D</code> dinámico asignado a la capa <code>Floor</code> para permitir empujarlo con resistencia física, subirse encima y saltar desde su superficie.</td>
-                </tr>
-                <tr>
-                    <td><strong>Bombas Destructibles</strong></td>
-                    <td><span class="param-badge">Knockback Impulse = 3.0</span></td>
-                    <td>Calcula el vector opuesto a la colisión, genera retroceso físico en el jugador y ejecuta animación de detonación en 9 fotogramas.</td>
-                </tr>
-                <tr>
-                    <td><strong>Monedas / UI</strong></td>
-                    <td><span class="param-badge">Trigger 2D + TextMeshPro</span></td>
-                    <td>Detección instantánea por <code>OnTriggerEnter2D</code>, destrucción del GameObject y actualización del marcador en pantalla.</td>
-                </tr>
-            </tbody>
-        </table>
+    <div class="ref-footer">
+        <span>Universidad Continental · Facultad de Ingeniería</span>
+        <span>Steve Fernando Salas Velarde · 2026</span>
+    </div>
+</div>
 
-        <!-- SECCIÓN 3: BITÁCORA DIGITAL -->
-        <div class="section-header">
-            <div class="section-number">3</div>
-            <div class="section-name">Bitácora Digital de Desarrollo y Transparencia de IA</div>
-        </div>
 
-        <div class="callout-box">
-            <div class="callout-title">Declaración de Uso y Adaptación de Inteligencia Artificial</div>
-            <p style="font-size: 8pt; margin-bottom: 3px;">
-                En estricto apego a las normas académicas y éticas del curso, se declara el uso de Inteligencia Artificial para la asistencia y optimización de arquitectura de código:
-            </p>
-            <div class="prompt-quote">
-                "Optimizar la arquitectura del script PlayerController en C# para Unity 6 aplicando buenas prácticas de encapsulamiento con [SerializeField], comentarios explicativos pedagógicos, salto condicional con OverlapCircle y compatibilidad con linearVelocity".
-            </div>
-            <p style="font-size: 8pt; margin-bottom: 0;">
-                <strong>Adaptación técnica:</strong> Se implementó el encapsulamiento formal con <code>[SerializeField]</code>, se configuró la directiva de depuración visual con <code>OnDrawGizmosSelected()</code> y se sincronizaron las interacciones con la nueva API <code>linearVelocity</code> de Unity 6 y la UI de TextMeshPro.
-            </p>
-        </div>
+<!-- ============================================================
+     PÁGINA 4 — CÓDIGO FUENTE COMPLETO
+============================================================ -->
+<div class="page">
 
-        <div class="page-footer">
-            <span>Universidad Continental • Facultad de Ingeniería</span>
-            <span>Informe Técnico — Página 2 de 3</span>
+    <div class="page-cap">
+        <span class="page-cap-left">Anexo A — Código Fuente: PlayerController.cs</span>
+        <span class="page-cap-right">Desarrollo de Videojuegos · PA N.º 1</span>
+    </div>
+
+    <div class="section-h">
+        <span class="section-num">A</span>
+        <div class="section-text-block">
+            <p class="section-title">PlayerController.cs — Controlador Principal del Jugador</p>
+            <p class="section-desc">Unity 6 · C# · 209 líneas · Documentado bloque por bloque</p>
         </div>
     </div>
 
-    <!-- ========================================================================= -->
-    <!-- PÁGINA 3: ANEXO DE CÓDIGO FUENTE -->
-    <!-- ========================================================================= -->
-    <div class="content-page page-break">
-        <div class="page-header">
-            <span>Universidad Continental • Desarrollo de Videojuegos</span>
-            <span>Producto Académico N.º 1</span>
-        </div>
-
-        <div class="section-header">
-            <div class="section-number">4</div>
-            <div class="section-name">Anexo Técnico: Código Fuente (PlayerController.cs)</div>
-        </div>
-
-        <div class="code-wrapper">
-            <pre class="code-content">using UnityEngine;
+    <div class="code-wrap">
+<pre>using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
 
-/// &lt;summary&gt;
-/// Controlador principal del jugador (Misión 3 - Hito 1).
-/// Gestiona movimiento responsivo, salto con detección física de suelo y Game Feel.
-/// &lt;/summary&gt;
+/// ===========================================================================
+/// PROYECTO : Hito 1 - Prototipo Funcional 2D y Game Feel
+/// SCRIPT   : PlayerController.cs
+/// GESTIONA : Movimiento, salto, detección de suelo, animaciones e interacciones
+/// ===========================================================================
 public class PlayerController : MonoBehaviour
 {
+    // BLOQUE 1 — Variables serializadas (configurables desde el Inspector)
+
     [Header("--- PARÁMETROS DE MOVIMIENTO Y GAME FEEL ---")]
-    [Tooltip("Velocidad de desplazamiento horizontal")]
+    [Tooltip("Velocidad horizontal en unidades Unity/segundo")]
     [SerializeField] private float speed = 2f;
 
     [Tooltip("Fuerza del impulso vertical al saltar")]
     [SerializeField] private float jumpForce = 4f;
 
     [Header("--- DETECCIÓN FÍSICA DE SUELO ---")]
-    [Tooltip("Punto de referencia en los pies del personaje")]
+    [Tooltip("Transform vacío ubicado en los pies del personaje")]
     [SerializeField] private Transform groundCheck;
 
     [Tooltip("Radio del círculo de detección de suelo")]
     [SerializeField] private float groundRadius = 0.1f;
 
-    [Tooltip("Capa que define qué objetos son suelo caminable")]
+    [Tooltip("Capa que define superficies caminables")]
     [SerializeField] private LayerMask groundLayer;
 
-    [Header("--- INTERFAZ DE USUARIO (UI) ---")]
-    [Tooltip("Texto en pantalla para el contador de monedas")]
+    [Header("--- INTERFAZ DE USUARIO ---")]
+    [Tooltip("Texto TextMeshPro del contador de monedas")]
     [SerializeField] private TMP_Text TextCoins;
 
-    // Componentes y variables de estado internas
-    private Rigidbody2D rb2D;
-    private Animator animator;
-    private float move;
-    private bool isGrounded;
-    private int coins = 0;
+    // BLOQUE 2 — Componentes y variables de estado internas
+    private Rigidbody2D rb2D;     // Motor de física 2D (velocidad, gravedad)
+    private Animator animator;    // Máquina de estados de animaciones
+    private float move;           // Input: -1 (izq), 0 (quieto), 1 (der)
+    private bool isGrounded;      // ¿El personaje toca el suelo?
+    private int coins = 0;        // Contador de monedas recolectadas
 
+    // BLOQUE 3 — Start: inicialización de componentes
     void Start()
     {
-        rb2D = GetComponent&lt;Rigidbody2D&gt;();
+        rb2D     = GetComponent&lt;Rigidbody2D&gt;();
         animator = GetComponent&lt;Animator&gt;();
     }
 
+    // BLOQUE 4 — Update: entrada de teclado, movimiento, salto y animaciones
     void Update()
     {
-        // 1. Lectura inmediata de teclado con GetAxisRaw (sin inercia artificial)
+        // 4.1 Lectura de teclado sin inercia (GetAxisRaw devuelve -1, 0 o 1)
         move = Input.GetAxisRaw("Horizontal");
 
-        // 2. Aplicación directa de velocidad horizontal manteniendo la vertical (Unity 6)
+        // 4.2 Velocidad horizontal directa; conserva la velocidad vertical (Y)
         rb2D.linearVelocity = new Vector2(move * speed, rb2D.linearVelocity.y);
 
-        // 3. Volteo de orientación del sprite según dirección de avance
+        // 4.3 Flip del sprite según la dirección de avance
         if (move != 0)
-        {
             transform.localScale = new Vector3(Mathf.Sign(move), 1, 1);
-        }
 
-        // 4. Salto condicional a estar en el suelo (previene saltos infinitos)
+        // 4.4 Salto — solo si el personaje está en el suelo (evita salto infinito)
         if (Input.GetButtonDown("Jump") &amp;&amp; isGrounded)
-        {
             rb2D.linearVelocity = new Vector2(rb2D.linearVelocity.x, jumpForce);
-        }
 
-        // 5. Sincronización de parámetros con el Animator
+        // 4.5 Sincronización de parámetros con el Animator
         if (animator != null)
         {
-            animator.SetFloat("Speed", Mathf.Abs(move));
+            animator.SetFloat("Speed",           Mathf.Abs(move));
             animator.SetFloat("VerticalVelocity", rb2D.linearVelocity.y);
-            animator.SetBool("IsGrounded", isGrounded);
+            animator.SetBool ("IsGrounded",        isGrounded);
         }
     }
 
+    // BLOQUE 5 — FixedUpdate: detección física de suelo (ciclo de física fijo)
     void FixedUpdate()
     {
-        // Detección física de suelo en el ciclo de física (FixedUpdate)
         if (groundCheck != null)
-        {
-            isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, groundLayer);
-        }
+            isGrounded = Physics2D.OverlapCircle(
+                groundCheck.position, groundRadius, groundLayer);
     }
 
+    // BLOQUE 6 — OnTriggerEnter2D: colisiones e interacciones con el escenario
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // Recolección de Monedas (Trigger)
+        // 6.1 Moneda — destruye el objeto, suma al contador, actualiza UI
         if (collision.CompareTag("Coin"))
         {
             Destroy(collision.gameObject);
@@ -685,33 +979,30 @@ public class PlayerController : MonoBehaviour
             if (TextCoins != null) TextCoins.text = coins.ToString();
         }
 
-        // Trampa mortal de pinchos: Reinicio de escena
+        // 6.2 Pinchos — reinicia la escena activa inmediatamente
         if (collision.CompareTag("Spikes"))
-        {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        }
 
-        // Obstáculo destructible (Bomba/Barril) con retroceso y animación
+        // 6.3 Bomba/Barril — knockback + animación de explosión + destrucción
         if (collision.CompareTag("Barrel") || collision.CompareTag("Bomb"))
         {
-            Vector2 knockbackDir = (rb2D.position - (Vector2)collision.transform.position).normalized;
+            Vector2 dir = (rb2D.position - (Vector2)collision.transform.position)
+                          .normalized;
             rb2D.linearVelocity = Vector2.zero;
-            rb2D.AddForce(knockbackDir * 3f, ForceMode2D.Impulse);
+            rb2D.AddForce(dir * 3f, ForceMode2D.Impulse);
 
-            foreach (var col in collision.gameObject.GetComponents&lt;BoxCollider2D&gt;())
-            {
+            foreach (var col in collision.gameObject
+                                         .GetComponents&lt;BoxCollider2D&gt;())
                 col.enabled = false;
-            }
 
-            if (collision.TryGetComponent(out Animator obstacleAnim))
-            {
-                obstacleAnim.enabled = true;
-            }
+            if (collision.TryGetComponent(out Animator anim))
+                anim.enabled = true;
 
             Destroy(collision.gameObject, 0.5f);
         }
     }
 
+    // BLOQUE 7 — OnDrawGizmosSelected: guía visual del radio de suelo en editor
     private void OnDrawGizmosSelected()
     {
         if (groundCheck != null)
@@ -721,13 +1012,13 @@ public class PlayerController : MonoBehaviour
         }
     }
 }</pre>
-        </div>
-
-        <div class="page-footer">
-            <span>Universidad Continental • Facultad de Ingeniería</span>
-            <span>Informe Técnico — Página 3 de 3</span>
-        </div>
     </div>
+
+    <div class="ref-footer">
+        <span>Universidad Continental · Facultad de Ingeniería</span>
+        <span>Steve Fernando Salas Velarde · 2026</span>
+    </div>
+</div>
 
 </body>
 </html>
