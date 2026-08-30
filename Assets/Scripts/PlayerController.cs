@@ -9,11 +9,11 @@ using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
     [Header("Parámetros de Movimiento (Game Feel)")]
-    [Tooltip("Velocidad horizontal calibrada y controlable")]
-    [SerializeField] private float speed = 3.8f;
+    [Tooltip("Velocidad horizontal clásica")]
+    [SerializeField] private float speed = 2f;
 
     [Tooltip("Fuerza del impulso vertical al saltar")]
-    [SerializeField] private float jumpForce = 6.2f;
+    [SerializeField] private float jumpForce = 4f;
 
     [Header("Detección de Suelo")]
     [Tooltip("Punto de referencia en los pies del personaje para chequear contacto")]
