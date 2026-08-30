@@ -101,8 +101,8 @@ public class PlayerController : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
 
-        // Obstáculo barril destructible con knockback
-        if (collision.CompareTag("Barrel"))
+        // Obstáculo destructible (Bomba/Barril) con knockback y explosión
+        if (collision.CompareTag("Barrel") || collision.CompareTag("Bomb"))
         {
             Vector2 knockbackDir = (rb2D.position - (Vector2)collision.transform.position).normalized;
             rb2D.linearVelocity = Vector2.zero;

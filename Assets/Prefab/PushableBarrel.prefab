@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6381920475819203847}
   - component: {fileID: 2918374619283746519}
   m_Layer: 0
-  m_Name: PushableBlock
+  m_Name: PushableBarrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -83,12 +83,12 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 2
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 8490642196906846815, guid: 613c8df68f2321245ae364117bdffbec, type: 3}
+  m_Sprite: {fileID: -6985964014889195593, guid: d168b36ba4aef574b99d6566e8c13fdb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.32, y: 0.32}
+  m_Size: {x: 0.21, y: 0.23}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -132,13 +132,13 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.32, y: 0.32}
-    newSize: {x: 0.32, y: 0.32}
+    oldSize: {x: 0.21, y: 0.23}
+    newSize: {x: 0.21, y: 0.23}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.32, y: 0.32}
+  m_Size: {x: 0.21, y: 0.23}
   m_EdgeRadius: 0
 --- !u!50 &2918374619283746519
 Rigidbody2D:
@@ -152,9 +152,9 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 2
-  m_LinearDamping: 1.5
-  m_AngularDamping: 0.5
+  m_Mass: 3.5
+  m_LinearDamping: 3.0
+  m_AngularDamping: 1.0
   m_GravityScale: 2
   m_Material: {fileID: 0}
   m_IncludeLayers:
