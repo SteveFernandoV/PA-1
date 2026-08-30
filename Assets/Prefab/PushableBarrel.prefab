@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4829103746192847501}
   - component: {fileID: 6381920475819203847}
   - component: {fileID: 2918374619283746519}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: PushableBarrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}

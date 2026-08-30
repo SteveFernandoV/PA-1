@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Informe Técnico - Producto Académico N.º 1 - Steve Fernando Salas Velarde</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap');
+
+        @page {
+            size: A4 portrait;
+            margin: 16mm 18mm 16mm 18mm;
+            @top-right {
+                content: "Producto Académico N.º 1 — Desarrollo de Videojuegos";
+                font-family: 'Inter', sans-serif;
+                font-size: 7.5pt;
+                color: #94a3b8;
+            }
+            @bottom-left {
+                content: "Universidad Continental • Facultad de Ingeniería";
+                font-family: 'Inter', sans-serif;
+                font-size: 7.5pt;
+                color: #94a3b8;
+            }
+            @bottom-right {
+                content: "Página " counter(page) " de " counter(pages);
+                font-family: 'Inter', sans-serif;
+                font-size: 7.5pt;
+                font-weight: 600;
+                color: #64748b;
+            }
+        }
+
+        * {
+            box-sizing: border-box;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            color: #0f172a;
+            background-color: #ffffff;
+            line-height: 1.5;
+            font-size: 9.2pt;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* BANNER INSTITUCIONAL */
+        .university-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #0f766e;
+            padding-bottom: 10px;
+            margin-bottom: 14px;
+        }
+
+        .uni-brand {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .uni-name {
+            font-size: 11pt;
+            font-weight: 800;
+            color: #0f172a;
+            letter-spacing: -0.2px;
+            text-transform: uppercase;
+        }
+
+        .uni-faculty {
+            font-size: 8pt;
+            font-weight: 600;
+            color: #0f766e;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .report-badge {
+            background-color: #0f766e;
+            color: #ffffff;
+            font-size: 8pt;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* TÍTULO PRINCIPAL */
+        .title-block {
+            margin-bottom: 14px;
+        }
+
+        .doc-main-title {
+            font-size: 16pt;
+            font-weight: 800;
+            color: #0f172a;
+            line-height: 1.2;
+            margin: 0 0 4px 0;
+            letter-spacing: -0.4px;
+        }
+
+        .doc-subtitle {
+            font-size: 10.5pt;
+            font-weight: 600;
+            color: #475569;
+            margin: 0 0 10px 0;
+        }
+
+        /* TABLA DE METADATOS ACADÉMICOS */
+        .meta-table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            margin-bottom: 16px;
+            font-size: 8.5pt;
+        }
+
+        .meta-table td {
+            padding: 6px 10px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .meta-table td.label {
+            width: 18%;
+            font-weight: 700;
+            color: #475569;
+            background-color: #f1f5f9;
+            text-transform: uppercase;
+            font-size: 7.5pt;
+            letter-spacing: 0.3px;
+        }
+
+        .meta-table td.value {
+            width: 32%;
+            font-weight: 600;
+            color: #0f172a;
+        }
+
+        /* SECCIONES Y ENCABEZADOS */
+        .section-title {
+            font-size: 11pt;
+            font-weight: 800;
+            color: #0f172a;
+            border-bottom: 1.5px solid #cbd5e1;
+            padding-bottom: 4px;
+            margin-top: 16px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .section-num {
+            background-color: #0f766e;
+            color: #ffffff;
+            font-size: 8pt;
+            font-weight: 800;
+            width: 20px;
+            height: 20px;
+            border-radius: 3px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* TARJETAS DE ENLACES */
+        .links-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 14px;
+        }
+
+        .card {
+            border: 1.5px solid #cbd5e1;
+            border-radius: 6px;
+            padding: 10px 12px;
+            background-color: #ffffff;
+        }
+
+        .card.github {
+            border-color: #0f766e;
+            background: linear-gradient(180deg, #f0fdfa 0%, #ffffff 100%);
+        }
+
+        .card.video {
+            border-color: #0284c7;
+            background: linear-gradient(180deg, #f0f9ff 0%, #ffffff 100%);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 4px;
+        }
+
+        .card-title {
+            font-size: 9pt;
+            font-weight: 700;
+            color: #0f172a;
+        }
+
+        .pill {
+            font-size: 6.8pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 2px 6px;
+            border-radius: 3px;
+        }
+
+        .pill.teal {
+            background-color: #ccfbf1;
+            color: #0f766e;
+        }
+
+        .pill.blue {
+            background-color: #e0f2fe;
+            color: #0369a1;
+        }
+
+        .card-link {
+            font-family: 'Fira Code', Consolas, monospace;
+            font-size: 8pt;
+            font-weight: 600;
+            display: block;
+            margin-bottom: 4px;
+            word-break: break-all;
+            text-decoration: none;
+        }
+
+        .card.github .card-link {
+            color: #0f766e;
+        }
+
+        .card.video .card-link {
+            color: #0284c7;
+        }
+
+        .card-desc {
+            font-size: 7.8pt;
+            color: #64748b;
+            line-height: 1.35;
+        }
+
+        /* TABLA DE INGENIERÍA Y GAME FEEL */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 8.2pt;
+            margin: 10px 0 14px 0;
+        }
+
+        .data-table th {
+            background-color: #1e293b;
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 7.5pt;
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+            padding: 6px 8px;
+            border: 1px solid #1e293b;
+            text-align: left;
+        }
+
+        .data-table td {
+            border: 1px solid #cbd5e1;
+            padding: 6px 8px;
+            vertical-align: middle;
+        }
+
+        .data-table tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+
+        .code-tag {
+            font-family: 'Fira Code', Consolas, monospace;
+            background-color: #f1f5f9;
+            color: #0f766e;
+            font-weight: 600;
+            font-size: 7.8pt;
+            padding: 1px 5px;
+            border-radius: 3px;
+            border: 1px solid #cbd5e1;
+            white-space: nowrap;
+        }
+
+        /* CAJAS DE TEXTO EXPLICATIVAS */
+        .callout {
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-left: 3.5px solid #0f766e;
+            border-radius: 0 5px 5px 0;
+            padding: 8px 12px;
+            margin-bottom: 10px;
+            font-size: 8.6pt;
+        }
+
+        .callout-title {
+            font-weight: 700;
+            color: #0f172a;
+            font-size: 9pt;
+            margin-bottom: 3px;
+        }
+
+        .prompt-container {
+            background-color: #f1f5f9;
+            border: 1px dashed #cbd5e1;
+            border-radius: 4px;
+            padding: 6px 10px;
+            font-family: 'Fira Code', monospace;
+            font-size: 7.8pt;
+            color: #334155;
+            margin: 4px 0 6px 0;
+        }
+
+        /* ANEXO DE CÓDIGO */
+        .code-block {
+            background-color: #0f172a;
+            border-radius: 6px;
+            padding: 12px 14px;
+            font-family: 'Fira Code', Consolas, monospace;
+            font-size: 7.4pt;
+            line-height: 1.35;
+            color: #f8fafc;
+            white-space: pre;
+            overflow-x: auto;
+            margin-top: 8px;
+        }
+
+        .page-break {
+            page-break-before: always;
+        }
+
+        p {
+            margin: 0 0 6px 0;
+            text-align: justify;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ========================================================================= -->
+    <!-- ENCABEZADO INSTITUCIONAL -->
+    <!-- ========================================================================= -->
+    <div class="university-header">
+        <div class="uni-brand">
+            <span class="uni-name">Universidad Continental</span>
+            <span class="uni-faculty">Facultad de Ingeniería • Escuela Profesional de Ingeniería de Sistemas e Informática</span>
+        </div>
+        <div class="report-badge">Consolidado 1 — 2026</div>
+    </div>
+
+    <!-- TÍTULO DEL DOCUMENTO -->
+    <div class="title-block">
+        <h1 class="doc-main-title">Producto Académico N.º 1</h1>
+        <div class="doc-subtitle">Hito 1: Prototipo Funcional 2D y Game Feel — "El Laboratorio de Movimiento"</div>
+    </div>
+
+    <!-- CUADRO DE METADATOS FORMALES -->
+    <table class="meta-table">
+        <tr>
+            <td class="label">Asignatura:</td>
+            <td class="value">Desarrollo de Videojuegos</td>
+            <td class="label">Estudiante:</td>
+            <td class="value">Steve Fernando Salas Velarde</td>
+        </tr>
+        <tr>
+            <td class="label">Motor / Versión:</td>
+            <td class="value">Unity 6 (6000.5.10f1) — URP 2D</td>
+            <td class="label">Repositorio Git:</td>
+            <td class="value">GitHub (Control de Versiones Oficial)</td>
+        </tr>
+    </table>
+
+    <!-- ========================================================================= -->
+    <!-- SECCIÓN 1: ENLACES OFICIALES DE ENTREGA -->
+    <!-- ========================================================================= -->
+    <div class="section-title">
+        <div class="section-num">1</div>
+        <div>Enlaces Oficiales de Entrega del Proyecto</div>
+    </div>
+
+    <div class="links-container">
+        <div class="card github">
+            <div class="card-header">
+                <span class="card-title">📁 Repositorio de Código Fuente</span>
+                <span class="pill teal">Público • Verificado</span>
+            </div>
+            <a class="card-link" href="https://github.com/SteveFernandoV/PA-1" target="_blank">https://github.com/SteveFernandoV/PA-1</a>
+            <div class="card-desc">
+                Contiene el proyecto completo en Unity 6, scripts en C# con documentación pedagógica, prefabs, animaciones y archivo <code>.gitignore</code> oficial que excluye adecuadamente la carpeta <code>Library/</code>.
+            </div>
+        </div>
+
+        <div class="card video">
+            <div class="card-header">
+                <span class="card-title">🎥 Grabación de Video-Defensa (2-3 min)</span>
+                <span class="pill blue">YouTube • Oculto</span>
+            </div>
+            <a class="card-link" href="https://www.youtube.com" target="_blank">[ENLACE AL VIDEO DE YOUTUBE]</a>
+            <div class="card-desc">
+                Cámara web activa mostrando rostro del estudiante y pantalla de Unity. Demuestra: físicas responsivas, salto condicional a suelo, barril empujable por física, monedas/UI y explicación de 1 min de <code>PlayerController.cs</code>.
+            </div>
+        </div>
+    </div>
+
+    <!-- ========================================================================= -->
+    <!-- SECCIÓN 2: ARQUITECTURA TÉCNICA Y CALIBRACIÓN DE GAME FEEL -->
+    <!-- ========================================================================= -->
+    <div class="section-title">
+        <div class="section-num">2</div>
+        <div>Arquitectura Técnica de Físicas y Calibración del "Game Feel"</div>
+    </div>
+
+    <p>
+        El desarrollo del <strong>Hito 1 ("El Laboratorio de Movimiento")</strong> tuvo como objetivo implementar una base sólida de física 2D que proporcione una respuesta inmediata, predecible y libre de inercia flotante artificial, aplicando los principios del diseño de <em>Game Feel</em>:
+    </p>
+
+    <table class="data-table">
+        <thead>
+            <tr>
+                <th style="width: 24%;">Componente / Mecánica</th>
+                <th style="width: 22%;">Configuración en Inspector</th>
+                <th>Lógica de Ingeniería y Justificación de Game Feel</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Movimiento Horizontal</strong></td>
+                <td><span class="code-tag">speed = 2.0f</span></td>
+                <td>Lectura por <code>Input.GetAxisRaw</code> y asignación en <code>rb2D.linearVelocity</code>. Elimina retardos de aceleración/frenado, dando control instantáneo al jugador.</td>
+            </tr>
+            <tr>
+                <td><strong>Salto y Gravedad</strong></td>
+                <td><span class="code-tag">jumpForce = 4.0 / Grav = 1.0</span></td>
+                <td>Trayectoria parabólica equilibrada y proporcional a la escala y separación de las plataformas del nivel de pruebas.</td>
+            </tr>
+            <tr>
+                <td><strong>Detección de Suelo</strong></td>
+                <td><span class="code-tag">OverlapCircle (r = 0.1)</span></td>
+                <td>Chequeo físico en <code>groundCheck</code> con máscara de capa <code>groundLayer</code>. Evita rigurosamente saltos dobles o infinitos en el aire.</td>
+            </tr>
+            <tr>
+                <td><strong>Barril Empujable</strong></td>
+                <td><span class="code-tag">Mass = 3.5 / Damping = 3.0</span></td>
+                <td><code>Rigidbody2D</code> dinámico con masa mayor a la del jugador (3.5 vs 1.0) y amortiguamiento lineal para ofrecer resistencia sólida y sensación de peso real.</td>
+            </tr>
+            <tr>
+                <td><strong>Bombas Destructibles</strong></td>
+                <td><span class="code-tag">Knockback Impulse = 3.0</span></td>
+                <td>Calcula el vector opuesto a la colisión, genera retroceso físico en el jugador y ejecuta animación de detonación en 9 fotogramas.</td>
+            </tr>
+            <tr>
+                <td><strong>Monedas / UI</strong></td>
+                <td><span class="code-tag">Trigger 2D + TextMeshPro</span></td>
+                <td>Detección instantánea por <code>OnTriggerEnter2D</code>, destrucción del GameObject y actualización del marcador en pantalla.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- ========================================================================= -->
+    <!-- SECCIÓN 3: BITÁCORA DIGITAL Y TRANSPARENCIA DE IA -->
+    <!-- ========================================================================= -->
+    <div class="section-title">
+        <div class="section-num">3</div>
+        <div>Bitácora Digital de Desarrollo y Transparencia de IA</div>
+    </div>
+
+    <div class="callout">
+        <div class="callout-title">Declaración de Uso y Adaptación de Inteligencia Artificial</div>
+        <p style="font-size: 8.2pt; margin-bottom: 4px;">
+            En estricto apego a las normas académicas y éticas del curso, se declara el uso de Inteligencia Artificial para la asistencia y optimización de arquitectura de código:
+        </p>
+        <div class="prompt-container">
+            "Optimizar la arquitectura del script PlayerController en C# para Unity 6 aplicando buenas prácticas de encapsulamiento con [SerializeField], comentarios explicativos pedagógicos, salto condicional con OverlapCircle y compatibilidad con linearVelocity".
+        </div>
+        <p style="font-size: 8.2pt; margin-bottom: 0;">
+            <strong>Adaptación técnica:</strong> Se implementó el encapsulamiento formal con <code>[SerializeField]</code>, se configuró la directiva de depuración visual con <code>OnDrawGizmosSelected()</code> y se sincronizaron las interacciones con la nueva API <code>linearVelocity</code> de Unity 6 y la UI de TextMeshPro.
+        </p>
+    </div>
+
+    <!-- ========================================================================= -->
+    <!-- SECCIÓN 4: ANEXO DE CÓDIGO FUENTE -->
+    <!-- ========================================================================= -->
+    <div class="page-break"></div>
+    <div class="section-title">
+        <div class="section-num">4</div>
+        <div>Anexo Técnico: Código Fuente (PlayerController.cs)</div>
+    </div>
+
+    <div class="code-block">using UnityEngine;
+using TMPro;
+using UnityEngine.SceneManagement;
+
+/// &lt;summary&gt;
+/// Controlador principal del jugador (Misión 3 - Hito 1).
+/// Gestiona movimiento responsivo, salto con detección física de suelo y Game Feel.
+/// &lt;/summary&gt;
+public class PlayerController : MonoBehaviour
+{
+    [Header("--- PARÁMETROS DE MOVIMIENTO Y GAME FEEL ---")]
+    [Tooltip("Velocidad de desplazamiento horizontal")]
+    [SerializeField] private float speed = 2f;
+
+    [Tooltip("Fuerza del impulso vertical al saltar")]
+    [SerializeField] private float jumpForce = 4f;
+
+    [Header("--- DETECCIÓN FÍSICA DE SUELO ---")]
+    [Tooltip("Punto de referencia en los pies del personaje")]
+    [SerializeField] private Transform groundCheck;
+
+    [Tooltip("Radio del círculo de detección de suelo")]
+    [SerializeField] private float groundRadius = 0.1f;
+
+    [Tooltip("Capa que define qué objetos son suelo caminable")]
+    [SerializeField] private LayerMask groundLayer;
+
+    [Header("--- INTERFAZ DE USUARIO (UI) ---")]
+    [Tooltip("Texto en pantalla para el contador de monedas")]
+    [SerializeField] private TMP_Text TextCoins;
+
+    // Componentes y variables de estado internas
+    private Rigidbody2D rb2D;
+    private Animator animator;
+    private float move;
+    private bool isGrounded;
+    private int coins = 0;
+
+    void Start()
+    {
+        rb2D = GetComponent&lt;Rigidbody2D&gt;();
+        animator = GetComponent&lt;Animator&gt;();
+    }
+
+    void Update()
+    {
+        // 1. Lectura inmediata de teclado con GetAxisRaw (sin inercia artificial)
+        move = Input.GetAxisRaw("Horizontal");
+
+        // 2. Aplicación directa de velocidad horizontal manteniendo la vertical (Unity 6)
+        rb2D.linearVelocity = new Vector2(move * speed, rb2D.linearVelocity.y);
+
+        // 3. Volteo de orientación del sprite según dirección de avance
+        if (move != 0)
+        {
+            transform.localScale = new Vector3(Mathf.Sign(move), 1, 1);
+        }
+
+        // 4. Salto condicional a estar en el suelo (previene saltos infinitos)
+        if (Input.GetButtonDown("Jump") &amp;&amp; isGrounded)
+        {
+            rb2D.linearVelocity = new Vector2(rb2D.linearVelocity.x, jumpForce);
+        }
+
+        // 5. Sincronización de parámetros con el Animator
+        if (animator != null)
+        {
+            animator.SetFloat("Speed", Mathf.Abs(move));
+            animator.SetFloat("VerticalVelocity", rb2D.linearVelocity.y);
+            animator.SetBool("IsGrounded", isGrounded);
+        }
+    }
+
+    void FixedUpdate()
+    {
+        // Detección física de suelo en el ciclo de física (FixedUpdate)
+        if (groundCheck != null)
+        {
+            isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, groundLayer);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        // Recolección de Monedas (Trigger)
+        if (collision.CompareTag("Coin"))
+        {
+            Destroy(collision.gameObject);
+            coins++;
+            if (TextCoins != null) TextCoins.text = coins.ToString();
+        }
+
+        // Trampa mortal de pinchos: Reinicio de escena
+        if (collision.CompareTag("Spikes"))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+
+        // Obstáculo destructible (Bomba/Barril) con retroceso y animación
+        if (collision.CompareTag("Barrel") || collision.CompareTag("Bomb"))
+        {
+            Vector2 knockbackDir = (rb2D.position - (Vector2)collision.transform.position).normalized;
+            rb2D.linearVelocity = Vector2.zero;
+            rb2D.AddForce(knockbackDir * 3f, ForceMode2D.Impulse);
+
+            foreach (var col in collision.gameObject.GetComponents&lt;BoxCollider2D&gt;())
+            {
+                col.enabled = false;
+            }
+
+            if (collision.TryGetComponent(out Animator obstacleAnim))
+            {
+                obstacleAnim.enabled = true;
+            }
+
+            Destroy(collision.gameObject, 0.5f);
+        }
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        if (groundCheck != null)
+        {
+            Gizmos.color = Color.green;
+            Gizmos.DrawWireSphere(groundCheck.position, groundRadius);
+        }
+    }
+}</div>
+
+</body>
+</html>
