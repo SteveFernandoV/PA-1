@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -28,7 +28,7 @@ body {
 }
 
 /* =========================================================
-   CARÁTULA INSTITUCIONAL
+   CARÃTULA INSTITUCIONAL ELEGANTE
 ========================================================= */
 .cover {
     width: 210mm;
@@ -81,7 +81,7 @@ body {
     justify-content: space-between;
 }
 
-/* Encabezado con Logo Vectorial de la Universidad */
+/* Encabezado con Logo Oficial del Estudiante */
 .cover-header {
     border-bottom: 1.5px solid #cbd5e1;
     padding-bottom: 14px;
@@ -90,38 +90,28 @@ body {
 .brand-row {
     display: flex;
     align-items: center;
-    gap: 14px;
+    justify-content: space-between;
+    gap: 16px;
 }
 
-.uni-logo-svg {
-    width: 48px;
-    height: 48px;
-    flex-shrink: 0;
+.uni-logo-img {
+    height: 46px;
+    width: auto;
+    object-fit: contain;
 }
 
 .brand-text {
+    text-align: right;
     display: flex;
     flex-direction: column;
 }
 
-.brand-title {
-    font-family: 'Merriweather', Georgia, serif;
-    font-size: 13pt;
-    font-weight: 700;
-    color: #0c4a6e;
-    letter-spacing: 0.2px;
-    text-transform: uppercase;
-    margin: 0;
-    line-height: 1.2;
-}
-
 .brand-faculty {
-    font-size: 8.5pt;
+    font-size: 8.8pt;
     font-weight: 700;
     color: #0f766e;
     text-transform: uppercase;
-    letter-spacing: 0.8px;
-    margin-top: 2px;
+    letter-spacing: 0.6px;
 }
 
 .brand-school {
@@ -131,9 +121,9 @@ body {
     margin-top: 1px;
 }
 
-/* Área central de la carátula */
+/* Ãrea Central de la CarÃ¡tula */
 .cover-center {
-    padding: 10px 0 16px 0;
+    padding: 14px 0 20px 0;
 }
 
 .cover-badge {
@@ -143,60 +133,49 @@ body {
     background-color: #f0fdfa;
     border: 1.5px solid #0f766e;
     color: #0f766e;
-    font-size: 8pt;
+    font-size: 8.2pt;
     font-weight: 800;
     padding: 3px 12px;
     border-radius: 4px;
     text-transform: uppercase;
     letter-spacing: 1.2px;
-    margin-bottom: 12px;
+    margin-bottom: 14px;
 }
 
 .cover-main-title {
     font-family: 'Merriweather', Georgia, serif;
-    font-size: 23pt;
+    font-size: 26pt;
     font-weight: 700;
     color: #0f172a;
-    line-height: 1.18;
+    line-height: 1.15;
     letter-spacing: -0.4px;
     margin: 0 0 8px 0;
 }
 
 .cover-subtitle {
     font-family: 'Merriweather', Georgia, serif;
-    font-size: 11pt;
+    font-size: 12pt;
     font-weight: 400;
     font-style: italic;
     color: #475569;
-    margin: 0 0 6px 0;
-    line-height: 1.35;
+    margin: 0 0 22px 0;
+    line-height: 1.4;
 }
 
-.cover-topic-quote {
-    font-size: 10.5pt;
-    font-weight: 700;
-    color: #0f766e;
-    border-left: 3.5px solid #0f766e;
-    padding-left: 10px;
-    margin: 8px 0 20px 0;
-    font-style: italic;
-    font-family: 'Merriweather', serif;
-}
-
-/* Tarjeta de información del estudiante */
+/* Tarjeta de InformaciÃ³n del Estudiante */
 .cover-student-card {
     background: #f8fafc;
     border: 1px solid #e2e8f0;
     border-top: 3.5px solid #0f766e;
     border-radius: 0 0 6px 6px;
-    padding: 12px 16px;
+    padding: 14px 18px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.03);
 }
 
 .student-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 8px 16px;
+    gap: 10px 18px;
 }
 
 .student-item {
@@ -220,7 +199,7 @@ body {
 }
 
 /* =========================================================
-   PÁGINAS DE CONTENIDO INTERNO
+   PÃGINAS DE CONTENIDO INTERNO
 ========================================================= */
 .page {
     width: 210mm;
@@ -257,7 +236,7 @@ body {
     letter-spacing: 0.3px;
 }
 
-/* Encabezados de sección */
+/* Encabezados de secciÃ³n */
 .sec-head {
     display: flex;
     align-items: flex-start;
@@ -298,7 +277,7 @@ body {
     margin: 0;
 }
 
-/* Párrafos */
+/* PÃ¡rrafos */
 p {
     margin: 0 0 6px 0;
     text-align: justify;
@@ -420,7 +399,7 @@ table.tc tr:nth-child(even) td { background: #f8fafc; }
 
 .tc-date { color: #64748b; font-size: 7.6pt; white-space: nowrap; }
 
-/* Tabla de parámetros */
+/* Tabla de parÃ¡metros */
 table.tp {
     width: 100%;
     border-collapse: collapse;
@@ -463,7 +442,7 @@ table.tp tr:nth-child(even) td { background: #f8fafc; }
     white-space: nowrap;
 }
 
-/* Callout IA */
+/* Callout */
 .callout {
     border-left: 3px solid #0f766e;
     background: #f0fdfa;
@@ -482,20 +461,7 @@ table.tp tr:nth-child(even) td { background: #f8fafc; }
     color: #0f172a;
 }
 
-.prompt-box {
-    background: #f8fafc;
-    border: 1px dashed #cbd5e1;
-    border-radius: 3px;
-    padding: 5px 8px;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 7.5pt;
-    font-style: italic;
-    color: #475569;
-    margin: 4px 0;
-    line-height: 1.4;
-}
-
-/* Bloque de código */
+/* Bloque de cÃ³digo */
 .code-wrap {
     background: #0f172a;
     border-radius: 6px;
@@ -512,7 +478,7 @@ table.tp tr:nth-child(even) td { background: #f8fafc; }
     white-space: pre;
 }
 
-/* Pie de página */
+/* Pie de pÃ¡gina */
 .page-footer {
     display: flex;
     justify-content: space-between;
@@ -527,48 +493,33 @@ table.tp tr:nth-child(even) td { background: #f8fafc; }
 <body>
 
 <!-- ============================================================
-     PÁGINA 1 — CARÁTULA FORMAL INSTITUCIONAL
+     PÃGINA 1 â€” CARÃTULA FORMAL INSTITUCIONAL
 ============================================================ -->
 <div class="cover">
     <div class="cover-stripe-left"></div>
     <div class="cover-stripe-accent"></div>
     <div class="cover-bottom-bar">
-        <span>Universidad Continental • Facultad de Ingeniería</span>
-        <span>Perú · 2026</span>
+        <span>Universidad Continental â€¢ Facultad de IngenierÃ­a</span>
+        <span>PerÃº Â· 2026</span>
     </div>
 
     <div class="cover-content">
-        <!-- Membrete con Logo Oficial Vectorial -->
+        <!-- Membrete con Logo Oficial -->
         <div class="cover-header">
             <div class="brand-row">
-                <!-- SVG Oficial Emblema Continental -->
-                <svg class="uni-logo-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="50" cy="50" r="48" fill="url(#gradLogo)" stroke="#0c4a6e" stroke-width="2"/>
-                    <path d="M68 32 C58 22 40 22 30 32 C20 42 20 58 30 68 C40 78 58 78 68 68 C72 64 74 58 74 52 L62 52 C62 55 60 59 58 61 C52 67 42 67 36 61 C30 55 30 45 36 39 C42 33 52 33 58 39 C60 41 62 45 62 48 L74 48 C74 42 72 36 68 32 Z" fill="#ffffff"/>
-                    <circle cx="50" cy="50" r="8" fill="#38bdf8"/>
-                    <defs>
-                        <linearGradient id="gradLogo" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse">
-                            <stop stop-color="#0c4a6e"/>
-                            <stop offset="0.6" stop-color="#0f766e"/>
-                            <stop offset="1" stop-color="#0284c7"/>
-                        </linearGradient>
-                    </defs>
-                </svg>
-
+                <img class="uni-logo-img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAggAAAFACAYAAADZH4T/AAAQAElEQVR4AeydB5wV1dn/ny0KKx3FFo0iNhLFWFAxivr+Y5coig0LiJKgoiBYsCTIm2hEUdGYV41GwRorGhELiVE0okGNYqEo2IiCiIB0AfnP91xmd+7cuW337u6du7/97HNn5tTnfM/MOc+cOXOmfJ3+REAEREAEREAERCBEoNz0JwIiIAIiIAIiUGIE6l4cGQh1Z6gUREAEREAERKDkCMhAKLkqVYFEQAREQATiTqAY9JeBUAy1IB1EQAREQAREoMgIyEAosgqROiIgAiIgAnEnUBr6y0AojXpUKURABERABESgoARkIBQUpxITAREQARGIOwHpnyAgAyHBQb8iIAIiIAIiIAIBAjIQAjC0KwIiIAIiEHcC0r9QBGQgFIqk0hEBERABERCBEiIgA6GEKlNFEQEREIG4E5D+xUNABkLx1IU0EQEREAEREIGiISADoWiqQoqIgAiIQNwJSP9SIiADoZRqU2URAREQAREQgQIRkIFQIJBKRgREQATiTkD6i0CQgAyEIA3ti4AIiIAIiIAIOAIyEBwG/YiACIhA3AlIfxEoLAEZCIXlqdREQAREQAREoCQIyEAoiWpUIURABOJOQPqLQLERkIFQbDUifURABERABESgCAjIQCiCSpAKIiACcScg/UWg9AjIQCi9OlWJREAEREAERKDOBGQg1BmhEhABEYg7AekvAiKQSkAGQioTuYiACIiACIhAkycgA6HJnwICIAJxJyD9RUAE6oOADIT6oKo0RUAEREAERCDmBGQgxLwCpb4IxJ2A9BcBEShOAjIQirNepJUIiIAIiIAINCoBGQiNil+Zi0DcCUh/ERCBUiUgA6FUa1blEgEREAEREIE6EJCBUAd4iioCcScg/UVABEQgHQEZCOnIyF0EREAEREAEmjABGQhNuPJV9LgTkP4iIAIiUH8EZCDUH1ulLAIiIAIiIAKxJSADIbZVJ8XjTkD6i4AIiEAxE5CBUMy1I91EQAREQAREoJEIyEBoJPDKNu4EpL8IiIAIlDYBGQilXb8qnQiIgAiIgAjUioAMhFphU6S4E5D+IiACIiACmQnIQMjMR74iIAIiIAIi0CQJyEBoktUe90JLfxEQAREQgfomIAOhvgkrfREQAREQARGIIQEZCDGstLirLP1FQAREQASKn4AMhOKvI2koAiIgAiIgAg1OQAZCgyOPe4bSXwREQAREoCkQkIHQFGpZZRQBERABERCBPAnIQMgTWNyDS38REAEREAERyIWADIRcKCmMCIiACIiACDQxAjIQYlXhUlYEREAEREAEGoaADISG4axcREAEREAERCBWBGQgNGB1KSsREAEREAERiAsBGQhxqSnpKQIiIAIiIAINSEAGQs6wFVAEREAEREAEmg4BGQhNp65VUhEQAREQARHImUCTMRByJqKAIiACIiACIiACJgNBJ4EIiIAIiIAIiEAKgZgYCCl6y0EEREAEREAERKAeCchAqEe4SloEREAEREAE4kqgQQyEuMKR3iIgAiIgAiLQVAnIQGiqNa9yi4AIiIAIiEAGAjkYCBliy0sEREAEREAERKAkCchAKMlqVaFEQAREQAREIAuBLN4yELIAkrcIiIAIiIAINEUCMhCaYq2rzCIgAiIgAnEnUO/6y0Cod8TKQAREQAREQATiR0AGQvzqTBqLgAiIgAjEnUAM9JeBEINKkooiIAIiIAIi0NAEZCA0NHHlJwIiIAIiEHcCTUJ/GQhNoppVSBEQAREQARHIj4AMhPx4KbQIiIAIiEDcCUj/nAjIQMgJkwKJgAiIgAiIQNMiIAOhadW3SisCIiACcScg/RuIgAyEBgKtbERABERABEQgTgRkIMSptqSrCIiACMSdgPSPDQEZCLGpKikqAiIgAiIgAg1HQAZCw7FWTiIgAiIQdwLSvwkRkIHQhCpbRRUBERABERCBXAnIQMiVlMKJgAiIQNwJSH8RyIOADIQ8YCmoCIiACIiACDQVAjIQmkpNq5wiIAJxJyD9RaBBCchAaFDcykwEREAEREAE4kFABkI86klaioAIxJ2A9BeBmBGQgRCzCpO6IiACIiACItAQBGQgNARl5SECIhB3AtJfBJocARkITa7KVWAREAEREAERyE5ABkJ2RgohAiIQdwLSXwREIG8CMhDyRqYIIiACIiACIlD6BGQglH4dq4QiEHcC0l8ERKARCMhAaAToylIEREAEREAEip2ADIRiryHpJwJxJyD9RUAEYklABkIsq01Ki4AIiIAIiED9EpCBUL98lboIxJ2A9BcBEWiiBGQgNNGKV7FFQAREQAREIBMBGQiZ6MhPBOJOQPqLgAiIQC0JyECoJThFEwEREAEREIFS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0ac+8/b1QGfyIb9gudnHDR39sMEt8cJCfQfDFOt+URkIX83N/My1qkXLrBw32GCDjGF23z37u8KMZLDWe7qEmEXLaIQk8Xxz+fJlaZ+BpmModxEQAREQgeImUFQGwryvmcyRCow7dbNKa948+3PdbKMQnX/yE8v29/Z/3rH3p063qMmJGActW1TaunXrJOsZTJnyZjak8i9iAlJNBERABKIIlEc5NpbbwgUL02bNxJhWadYgD0bKNgrRabuOweCR+599+qkx+zXSc90qO/74EyK95CgCIiACIiACpUKgqAyElSuXp+VatWEza9WqVVp/32Pxd4v93chttkcQRPK/fZ7u7YVTTulNMIkIFAEBqSACIiAC9UOgqAyERYsW1bmUK9e/95suISYxpvPL1X233brkGlThREAEREAERCCWBIrKQEhHkPdcK5pV2gYVlemCVLuvWLa0er++drKtxVBf+Srd0iOgEomACIhAsRKIhYFQUZFQc/Xa6GUzg3BzedMhGL42+wsXpp8rUZv0FEcEREAEREAEio1AouctEq2qqtK/xrh0yTJbtiz9HAW/CNnedMhlDoKfVrrtW2//J52X3JsUARVWBERABEqXQFEZCG3atM5IOmot+XCENq3bhJ2SjnOZg9CyZUKPxOuVSdHdwYMPPOS2+hEBERABERCBUiVQVAZCu43Tf2eB9QeWLM0+v4AvPmaqrFmzP8nk7fy22XZb44Mba9dEfNCkrJlNnDjB+FbDihUrrKnLwsWLHAMHLmY/UlcEREAERCA9gaIyEDps0iFSU/e64bpVtnrVqkj/oOPGG7cPHqbsT/vwwxS3sMMeu//MOu+0veecOuehqqq5fbtwme29d1fbd999JXvvY0OGXOKxahr/GESstOkLx02j5CqlCIhAUyNQVAbCj7bcMiN/f32CTIGyzTH4z3/edXf/mdJgXe2OHbdLGwSDZerUD03yoc2cOdPeffetRhhFSFs9BfNglOjue8Zajx7H2k477WTbbbed/bRzZ+vWbZ9q4Rh3/A897Ci7+Y9/ynp+FUxBJSQCIiAC9UigqAyE7bfvVJCiVm3UxuuwVkam9drk1y2XuQzdDzzISCfdPARWdpS08BhX2urV39uXX37l7ZfG//TpM2y//faz5s2b2Vn9zrbx45/xDKHZ9vkXc+3r+YvdCBKjSAjHuM+cOdsmvvCC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OpAGIiACIiACIlB0BGQgFF2VSCEREAERiDsB6V8KBGQglEItqgwiIAIiIAIiUGACMhAKDFTJiYAIiEDcCUh/EYCADAQoSERABERABERABJIIyEBIwqEDERABEYg7AekvAoUhIAOhMByVigiIgAiIgAiUFAEZCCVVnSqMCIhA3AlIfxEoFgIyEIqlJqSHCIiACIiACBQRARkIRVQZUkUERCDuBKS/CJQOARkIpVOXKokIiIAIiIAIFIyADISCoVRCIiACcScg/UVABGoIyECoYaE9ERABERABERCB9QRkIKwHoY0IiEDcCUh/ERCBQhKQgVBImkpLBERABERABEqEgAyEEqlIFUME4k5A+ouACBQXARkIxVUf0kYEREAEREAEioKADISiqAYpIQJxJyD9RUAESo2ADIRSq1GVRwREQAREQAQKQEAGQgEgKgkRiDsB6S8CIiACYQIyEMJEdCwCIiACIiACImAyEHQSiEDsCagAIiACIlB4AjIZtRqdAAAClElEQVQQCs9UKYqACIiACIhA7AnIQIh9FaoAcScg/UVABESgGAnIQCjGWpFOIiACIiACItDIBGQgNHIFKPu4E5D+IiACIlCaBGQglGa9qlQiIAIiIAIiUCcCMhDqhE+R405A+ouACIiACEQTkIEQzUWuIiACIiACItCkCchAaNLVH/fCS38REAEREIH6IiADob7IKl0REAEREAERiDEBGQgxrry4qy79RUAEREAEipeADITirRtpJgIiIAIiIAKNRkAGQqOhj3vG0l8EREAERKCUCchAKOXaVdlEQAREQAREoJYEZCDUElzco0l/ERABERABEchEQAZCJjryEwEREAEREIEmSkAGQiwrXkqLgAiIgAiIQP0SkIFQv3yVugiIgAiIgAjEkoAMhEaoNmUpAiIgAiIgAsVOQAZCsdeQ9BMBERABERCBRiAgAyFv6IogAiIgAiIgAqVPQAZC6dexSigCIiACIiACeRNocgZC3oQUQQREQAREQASaIAEZCE2w0lVkERABERABEchGIGYGQrbiyF8EREAEREAERKAQBGQgFIKi0hABERABERCBEiPQoAZCibFTcURABERABESgZAnIQCjZqlXBREAEREAERKD2BPIwEGqfiWKKgAiIgAiIgAjEi4AMhHjVl7QVAREQAREQgcISSJOaDIQ0YOQsAiIgAiIgAk2ZgAyEplz7KrsIiIAIiEDcCdSb/jIQ6g2tEhYBERABERCB+BKQgRDfupPmIiACIiACcSdQxPrLQCjiypFqIiACIiACItBYBGQgNBZ55SsCIiACIhB3AiWtvwyEkq5eFU4EREAEREAEakdABkLtuCmWCIiACIhA3AlI/4wEZCBkxCNPERABERABEWiaBP4/AAAA///WNy2zAAAABklEQVQDAKWchl1A3dFJAAAAAElFTkSuQmCC" alt="Universidad Continental">
                 <div class="brand-text">
-                    <h1 class="brand-title">Universidad Continental</h1>
-                    <div class="brand-faculty">Facultad de Ingeniería</div>
-                    <div class="brand-school">Escuela Profesional de Ingeniería de Sistemas e Informática</div>
+                    <div class="brand-faculty">Facultad de IngenierÃ­a</div>
+                    <div class="brand-school">Escuela Profesional de IngenierÃ­a de Sistemas e InformÃ¡tica</div>
                 </div>
             </div>
         </div>
 
-        <!-- Área Central del Trabajo -->
+        <!-- Ãrea Central del Trabajo -->
         <div class="cover-center">
-            <div class="cover-badge">Evaluación para el Consolidado 1</div>
-            <h2 class="cover-main-title">Producto Académico<br>N.º 1</h2>
+            <div class="cover-badge">EvaluaciÃ³n para el Consolidado 1</div>
+            <h2 class="cover-main-title">Producto AcadÃ©mico N.Âº 1</h2>
             <div class="cover-subtitle">Hito 1: Prototipo Funcional 2D y Game Feel</div>
-            <div class="cover-topic-quote">"El Laboratorio de Movimiento"</div>
 
             <!-- Ficha del Alumno -->
             <div class="cover-student-card">
@@ -582,19 +533,19 @@ table.tp tr:nth-child(even) td { background: #f8fafc; }
                         <span class="s-val">Steve Fernando Salas Velarde</span>
                     </div>
                     <div class="student-item">
-                        <span class="s-label">Motor & Versión</span>
+                        <span class="s-label">Motor & VersiÃ³n</span>
                         <span class="s-val">Unity 6 (6000.5.10f1) URP 2D</span>
                     </div>
                     <div class="student-item">
                         <span class="s-label">Control de Versiones</span>
-                        <span class="s-val">Git & GitHub (Repositorio Público)</span>
+                        <span class="s-val">Git & GitHub (Repositorio PÃºblico)</span>
                     </div>
                     <div class="student-item">
                         <span class="s-label">Modalidad</span>
-                        <span class="s-val">Individual — Informe + Video Defensa</span>
+                        <span class="s-val">Individual â€” Informe + Video Defensa</span>
                     </div>
                     <div class="student-item">
-                        <span class="s-label">Video de Sustentación</span>
+                        <span class="s-label">Video de SustentaciÃ³n</span>
                         <span class="s-val">YouTube (Modo Oculto / No listado)</span>
                     </div>
                 </div>
@@ -607,53 +558,53 @@ table.tp tr:nth-child(even) td { background: #f8fafc; }
 
 
 <!-- ============================================================
-     PÁGINA 2 — INTRODUCCIÓN, ENLACES Y COMMITS
+     PÃGINA 2 â€” INTRODUCCIÃ“N, ENLACES Y COMMITS
 ============================================================ -->
 <div class="page">
     <div class="page-top-header">
-        <span class="pth-title">Producto Académico N.º 1 — Hito 1</span>
-        <span class="pth-info">Desarrollo de Videojuegos · Universidad Continental</span>
+        <span class="pth-title">Producto AcadÃ©mico N.Âº 1 â€” Hito 1</span>
+        <span class="pth-info">Desarrollo de Videojuegos Â· Universidad Continental</span>
     </div>
 
     <div class="sec-head">
         <span class="sec-num">1</span>
         <div class="sec-title-wrap">
-            <p class="sec-title">Descripción General del Proyecto</p>
+            <p class="sec-title">DescripciÃ³n General del Proyecto</p>
             <p class="sec-sub">Contexto, objetivos y estructura del prototipo</p>
         </div>
     </div>
 
-    <p>El presente informe documenta el desarrollo del <strong>Hito 1: Prototipo Funcional 2D y Game Feel</strong>, correspondiente al primer producto académico del curso de Desarrollo de Videojuegos. El proyecto se construyó desde cero en <strong>Unity 6 (6000.5.10f1)</strong> bajo el pipeline de renderizado <em>Universal Render Pipeline 2D (URP)</em>, trabajando con física 2D nativa, animaciones por máquina de estados y control de versiones mediante Git y GitHub.</p>
+    <p>El presente informe documenta el desarrollo del <strong>Hito 1: Prototipo Funcional 2D y Game Feel</strong>, correspondiente al primer producto acadÃ©mico del curso de Desarrollo de Videojuegos. El proyecto se construyÃ³ desde cero en <strong>Unity 6 (6000.5.10f1)</strong> bajo el pipeline de renderizado <em>Universal Render Pipeline 2D (URP)</em>, trabajando con fÃ­sica 2D nativa, animaciones por mÃ¡quina de estados y control de versiones mediante Git y GitHub.</p>
 
-    <p>El eje central del hito fue el concepto de <strong><em>Game Feel</em></strong>: esa sensación táctil e inmediata que tiene el jugador al interactuar con el personaje. Se calibraron cuidadosamente velocidad, fuerza de salto y gravedad para eliminar cualquier inercia artificial o "patinaje". El escenario de pruebas concentra todas las mecánicas requeridas en un nivel compacto y funcional.</p>
+    <p>El eje central del hito fue el concepto de <strong><em>Game Feel</em></strong>: esa sensaciÃ³n tÃ¡ctil e inmediata que tiene el jugador al interactuar con el personaje. Se calibraron cuidadosamente velocidad, fuerza de salto y gravedad para eliminar cualquier inercia artificial o "patinaje". El escenario de pruebas concentra todas las mecÃ¡nicas requeridas en un nivel compacto y funcional.</p>
 
-    <p>La arquitectura se organiza en carpetas especializadas: <em>Scripts</em> (lógica C#), <em>Prefab</em> (objetos reutilizables), <em>Scenes</em> (escenario principal), <em>animations</em> (clips y controladores), <em>sprites</em> (atlas del pack "Berie's Adventure") y <em>Music</em> (audio de fondo). El historial de cambios está registrado mediante commits descriptivos y un <em>.gitignore</em> configurado con la plantilla oficial de Unity.</p>
+    <p>La arquitectura se organiza en carpetas especializadas: <em>Scripts</em> (lÃ³gica C#), <em>Prefab</em> (objetos reutilizables), <em>Scenes</em> (escenario principal), <em>animations</em> (clips y controladores), <em>sprites</em> (atlas del pack "Berie's Adventure") y <em>Music</em> (audio de fondo). El historial de cambios estÃ¡ registrado mediante commits descriptivos y un <em>.gitignore</em> configurado con la plantilla oficial de Unity.</p>
 
     <div class="sec-head">
         <span class="sec-num">2</span>
         <div class="sec-title-wrap">
             <p class="sec-title">Enlaces Oficiales de Entrega del Proyecto</p>
-            <p class="sec-sub">Repositorio y video-defensa técnica sustentatoria</p>
+            <p class="sec-sub">Repositorio y video-defensa tÃ©cnica sustentatoria</p>
         </div>
     </div>
 
     <div class="links-grid">
         <div class="link-card gh">
             <div class="lc-header">
-                <span class="lc-name">📁 Repositorio de Código en GitHub</span>
-                <span class="lc-badge teal">Público · Verificado</span>
+                <span class="lc-name">ðŸ“ Repositorio de CÃ³digo en GitHub</span>
+                <span class="lc-badge teal">PÃºblico Â· Verificado</span>
             </div>
             <a class="lc-url" href="https://github.com/SteveFernandoV/PA-1" target="_blank">https://github.com/SteveFernandoV/PA-1</a>
-            <div class="lc-desc">Contiene el proyecto Unity 6 completo, el script <code>PlayerController.cs</code> con documentación exhaustiva bloque por bloque, prefabs configurados, animaciones de explosión cuadro a cuadro, y el <code>.gitignore</code> oficial que excluye <code>Library/</code>, <code>Temp/</code> y <code>Logs/</code>.</div>
+            <div class="lc-desc">Contiene el proyecto Unity 6 completo, el script <code>PlayerController.cs</code> con documentaciÃ³n exhaustiva bloque por bloque, prefabs configurados, animaciones de explosiÃ³n cuadro a cuadro, y el <code>.gitignore</code> oficial que excluye <code>Library/</code>, <code>Temp/</code> y <code>Logs/</code>.</div>
         </div>
 
         <div class="link-card yt">
             <div class="lc-header">
-                <span class="lc-name">🎥 Video-Defensa Técnica (Sustentación)</span>
-                <span class="lc-badge red">YouTube · Oculto</span>
+                <span class="lc-name">ðŸŽ¥ Video-Defensa TÃ©cnica (SustentaciÃ³n)</span>
+                <span class="lc-badge red">YouTube Â· Oculto</span>
             </div>
             <a class="lc-url" href="https://youtu.be/5rkQWcN0zUk" target="_blank">https://youtu.be/5rkQWcN0zUk</a>
-            <div class="lc-desc">Grabación con cámara web activa mostrando rostro del estudiante y pantalla completa de Unity. Demuestra: movimiento responsivo, salto con detección de suelo, barril empujable como plataforma, recolección de monedas (UI) y bombas con animación de detonación.</div>
+            <div class="lc-desc">GrabaciÃ³n con cÃ¡mara web activa mostrando rostro del estudiante y pantalla completa de Unity. Demuestra: movimiento responsivo, salto con detecciÃ³n de suelo, barril empujable como plataforma, recolecciÃ³n de monedas (UI) y bombas con animaciÃ³n de detonaciÃ³n.</div>
         </div>
     </div>
 
@@ -661,7 +612,7 @@ table.tp tr:nth-child(even) td { background: #f8fafc; }
         <span class="sec-num">3</span>
         <div class="sec-title-wrap">
             <p class="sec-title">Historial de Control de Versiones (Git)</p>
-            <p class="sec-sub">Commits representativos registrados en GitHub — Misión 1</p>
+            <p class="sec-sub">Commits representativos registrados en GitHub â€” MisiÃ³n 1</p>
         </div>
     </div>
 
@@ -670,84 +621,84 @@ table.tp tr:nth-child(even) td { background: #f8fafc; }
             <tr>
                 <th style="width:12%">Hash</th>
                 <th style="width:16%">Fecha</th>
-                <th>Descripción del Commit</th>
+                <th>DescripciÃ³n del Commit</th>
             </tr>
         </thead>
         <tbody>
             <tr><td class="tc-hash">0a0a7f7</td><td class="tc-date">27/08/2026</td><td>Registro inicial del repositorio con estructura base de Unity y archivo .gitignore oficial</td></tr>
-            <tr><td class="tc-hash">b646356</td><td class="tc-date">29/08/2026</td><td>Añadido escenario de juego, personaje jugador Berie y pack de recursos gráficos del nivel</td></tr>
-            <tr><td class="tc-hash">7c77e02</td><td class="tc-date">29/08/2026</td><td>Misiones 2 y 3: implementado PlayerController con Game Feel responsivo y obstáculo físico empujable</td></tr>
-            <tr><td class="tc-hash">e6d5334</td><td class="tc-date">29/08/2026</td><td>Obstáculos destructibles actualizados a Bombas con animación de explosión de 9 fotogramas y barril pesado</td></tr>
+            <tr><td class="tc-hash">b646356</td><td class="tc-date">29/08/2026</td><td>AÃ±adido escenario de juego, personaje jugador Berie y pack de recursos grÃ¡ficos del nivel</td></tr>
+            <tr><td class="tc-hash">7c77e02</td><td class="tc-date">29/08/2026</td><td>Misiones 2 y 3: implementado PlayerController con Game Feel responsivo y obstÃ¡culo fÃ­sico empujable</td></tr>
+            <tr><td class="tc-hash">e6d5334</td><td class="tc-date">29/08/2026</td><td>ObstÃ¡culos destructibles actualizados a Bombas con animaciÃ³n de explosiÃ³n de 9 fotogramas y barril pesado</td></tr>
             <tr><td class="tc-hash">f5c3ba1</td><td class="tc-date">30/08/2026</td><td>Asignada capa Floor (Layer 3) al barril empujable para permitir subirse y saltar desde su superficie</td></tr>
         </tbody>
     </table>
 
     <div class="page-footer">
-        <span>Universidad Continental · Facultad de Ingeniería</span>
-        <span>Steve Fernando Salas Velarde · 2026 &nbsp;·&nbsp; Página 2 de 4</span>
+        <span>Universidad Continental Â· Facultad de IngenierÃ­a</span>
+        <span>Steve Fernando Salas Velarde Â· 2026 &nbsp;Â·&nbsp; PÃ¡gina 2 de 4</span>
     </div>
 </div>
 
 
 <!-- ============================================================
-     PÁGINA 3 — ARQUITECTURA TÉCNICA Y GAME FEEL
+     PÃGINA 3 â€” ARQUITECTURA TÃ‰CNICA Y GAME FEEL
 ============================================================ -->
 <div class="page">
     <div class="page-top-header">
-        <span class="pth-title">Arquitectura Técnica — Físicas y Game Feel</span>
-        <span class="pth-info">Desarrollo de Videojuegos · PA N.º 1</span>
+        <span class="pth-title">Arquitectura TÃ©cnica â€” FÃ­sicas y Game Feel</span>
+        <span class="pth-info">Desarrollo de Videojuegos Â· PA N.Âº 1</span>
     </div>
 
     <div class="sec-head">
         <span class="sec-num">4</span>
         <div class="sec-title-wrap">
-            <p class="sec-title">Diseño Físico y Calibración del "Game Feel"</p>
-            <p class="sec-sub">Parámetros de movimiento, salto, detección de suelo e interacciones</p>
+            <p class="sec-title">DiseÃ±o FÃ­sico y CalibraciÃ³n del "Game Feel"</p>
+            <p class="sec-sub">ParÃ¡metros de movimiento, salto, detecciÃ³n de suelo e interacciones</p>
         </div>
     </div>
 
-    <p>El diseño de las físicas partió de un principio central del diseño de videojuegos: <em>la sensación de control inmediato siempre debe priorizarse sobre el realismo físico</em>. Por eso se empleó <strong>respuesta instantánea</strong> mediante <code>Input.GetAxisRaw</code>, que retorna valores exactos de -1, 0 o 1 sin suavizado. La velocidad se aplica directamente sobre <code>rb2D.linearVelocity</code>, la API actualizada de Unity 6 para el control preciso del Rigidbody2D.</p>
+    <p>El diseÃ±o de las fÃ­sicas partiÃ³ de un principio central del diseÃ±o de videojuegos: <em>la sensaciÃ³n de control inmediato siempre debe priorizarse sobre el realismo fÃ­sico</em>. Por eso se empleÃ³ <strong>respuesta instantÃ¡nea</strong> mediante <code>Input.GetAxisRaw</code>, que retorna valores exactos de -1, 0 o 1 sin suavizado. La velocidad se aplica directamente sobre <code>rb2D.linearVelocity</code>, la API actualizada de Unity 6 para el control preciso del Rigidbody2D.</p>
 
-    <p>El sistema de salto fue el aspecto más cuidadosamente ajustado. Se descartó <code>AddForce</code> porque generaba variaciones impredecibles dependiendo del peso y fricción del entorno. En su lugar, se asigna directamente la componente Y de <code>linearVelocity</code>, garantizando la misma altura de salto sin importar las condiciones del nivel.</p>
+    <p>El sistema de salto fue el aspecto mÃ¡s cuidadosamente ajustado. Se descartÃ³ <code>AddForce</code> porque generaba variaciones impredecibles dependiendo del peso y fricciÃ³n del entorno. En su lugar, se asigna directamente la componente Y de <code>linearVelocity</code>, garantizando la misma altura de salto sin importar las condiciones del nivel.</p>
 
     <table class="tp">
         <thead>
             <tr>
-                <th style="width:23%">Componente / Mecánica</th>
+                <th style="width:23%">Componente / MecÃ¡nica</th>
                 <th style="width:21%">Valor Configurado</th>
-                <th>Decisión de Diseño y Justificación Técnica</th>
+                <th>DecisiÃ³n de DiseÃ±o y JustificaciÃ³n TÃ©cnica</th>
             </tr>
         </thead>
         <tbody>
             <tr>
                 <td><strong>Movimiento horizontal</strong></td>
                 <td><span class="mono-tag">speed = 2.0f</span></td>
-                <td>Velocidad controlable combinada con <code>GetAxisRaw</code>: elimina deslizamiento y aceleración artificial, logrando respuesta táctil inmediata al teclado.</td>
+                <td>Velocidad controlable combinada con <code>GetAxisRaw</code>: elimina deslizamiento y aceleraciÃ³n artificial, logrando respuesta tÃ¡ctil inmediata al teclado.</td>
             </tr>
             <tr>
                 <td><strong>Salto</strong></td>
                 <td><span class="mono-tag">jumpForce = 4.0f</span></td>
-                <td>Asignación directa en el eje Y de <code>linearVelocity</code>. Garantiza parábola de salto consistente, calibrada para alcanzar las plataformas del nivel.</td>
+                <td>AsignaciÃ³n directa en el eje Y de <code>linearVelocity</code>. Garantiza parÃ¡bola de salto consistente, calibrada para alcanzar las plataformas del nivel.</td>
             </tr>
             <tr>
                 <td><strong>Gravedad</strong></td>
                 <td><span class="mono-tag">GravityScale = 1.0</span></td>
-                <td>Escala estándar de Unity elegida tras pruebas comparativas. Valores mayores aceleraban la caída de forma brusca, afectando la lectura del salto.</td>
+                <td>Escala estÃ¡ndar de Unity elegida tras pruebas comparativas. Valores mayores aceleraban la caÃ­da de forma brusca, afectando la lectura del salto.</td>
             </tr>
             <tr>
-                <td><strong>Detección de suelo</strong></td>
+                <td><strong>DetecciÃ³n de suelo</strong></td>
                 <td><span class="mono-tag">OverlapCircle (r = 0.1)</span></td>
-                <td>Círculo de colisión en <code>groundCheck</code> (pies del personaje) filtrado por <code>groundLayer</code>. Impide estrictamente el doble salto o salto en el aire.</td>
+                <td>CÃ­rculo de colisiÃ³n en <code>groundCheck</code> (pies del personaje) filtrado por <code>groundLayer</code>. Impide estrictamente el doble salto o salto en el aire.</td>
             </tr>
             <tr>
                 <td><strong>Barril empujable / plataforma</strong></td>
-                <td><span class="mono-tag">Mass=3.5 · Damping=3.0</span></td>
-                <td><code>Rigidbody2D</code> dinámico en capa <code>Floor</code> (Layer 3). El jugador puede empujarlo con resistencia física sólida, subirse encima y saltar desde su superficie.</td>
+                <td><span class="mono-tag">Mass=3.5 Â· Damping=3.0</span></td>
+                <td><code>Rigidbody2D</code> dinÃ¡mico en capa <code>Floor</code> (Layer 3). El jugador puede empujarlo con resistencia fÃ­sica sÃ³lida, subirse encima y saltar desde su superficie.</td>
             </tr>
             <tr>
-                <td><strong>Bombas (obstáculos)</strong></td>
+                <td><strong>Bombas (obstÃ¡culos)</strong></td>
                 <td><span class="mono-tag">Knockback = 3.0f</span></td>
-                <td>Al colisionar se calcula el vector opuesto al impacto y se aplica impulso al jugador. Los colliders se desactivan, el Animator habilita la animación de 9 fotogramas y el objeto se destruye tras 0.5 s.</td>
+                <td>Al colisionar se calcula el vector opuesto al impacto y se aplica impulso al jugador. Los colliders se desactivan, el Animator habilita la animaciÃ³n de 9 fotogramas y el objeto se destruye tras 0.5 s.</td>
             </tr>
             <tr>
                 <td><strong>Monedas (coleccionables)</strong></td>
@@ -760,46 +711,46 @@ table.tp tr:nth-child(even) td { background: #f8fafc; }
     <div class="sec-head">
         <span class="sec-num">5</span>
         <div class="sec-title-wrap">
-            <p class="sec-title">Bitácora Digital de Desarrollo</p>
-            <p class="sec-sub">Registro de decisiones técnicas, optimizaciones y metodología de pruebas</p>
+            <p class="sec-title">BitÃ¡cora Digital de Desarrollo</p>
+            <p class="sec-sub">Registro de decisiones tÃ©cnicas, optimizaciones y metodologÃ­a de pruebas</p>
         </div>
     </div>
 
-    <p>A lo largo del desarrollo se tomaron decisiones de ingeniería clave para garantizar estabilidad y rendimiento. La primera fue estructurar el script <code>PlayerController.cs</code> con encapsulamiento formal mediante atributos <code>[SerializeField]</code> privados, permitiendo calibrar los parámetros de físicas y referencias de UI directamente desde el Inspector de Unity sin exponer el estado interno de la clase. Esta práctica sigue los estándares de arquitectura limpia en Unity.</p>
+    <p>A lo largo del desarrollo se tomaron decisiones de ingenierÃ­a clave para garantizar estabilidad y rendimiento. La primera fue estructurar el script <code>PlayerController.cs</code> con encapsulamiento formal mediante atributos <code>[SerializeField]</code> privados, permitiendo calibrar los parÃ¡metros de fÃ­sicas y referencias de UI directamente desde el Inspector de Unity sin exponer el estado interno de la clase. Esta prÃ¡ctica sigue los estÃ¡ndares de arquitectura limpia en Unity.</p>
 
-    <p>La segunda decisión fue delegar la detección física de suelo al ciclo de <code>FixedUpdate()</code> en lugar de <code>Update()</code>. Dado que <code>FixedUpdate</code> opera sincronizado con el motor de físicas de Unity a intervalos fijos de tiempo (50 Hz), se evitan discrepancias de colisión causadas por variaciones en la tasa de cuadros por segundo (FPS) del hardware.</p>
+    <p>La segunda decisiÃ³n fue delegar la detecciÃ³n fÃ­sica de suelo al ciclo de <code>FixedUpdate()</code> en lugar de <code>Update()</code>. Dado que <code>FixedUpdate</code> opera sincronizado con el motor de fÃ­sicas de Unity a intervalos fijos de tiempo (50 Hz), se evitan discrepancias de colisiÃ³n causadas por variaciones en la tasa de cuadros por segundo (FPS) del hardware.</p>
 
     <div class="callout">
-        <div class="callout-title">Metodología de Pruebas y Depuración Visual</div>
+        <div class="callout-title">MetodologÃ­a de Pruebas y DepuraciÃ³n Visual</div>
         <p style="font-size:8.2pt; margin-bottom:4px; color:#1e293b;">
-            Para optimizar la precisión de los saltos y el contacto con plataformas dinámicas como el barril, se implementó el método <code>OnDrawGizmosSelected()</code>. Esta función proyecta una esfera verde de alambre en la ventana de <em>Scene</em> del editor, facilitando la calibración visual del radio de detección (<code>groundRadius = 0.1f</code>) en tiempo real.
+            Para optimizar la precisiÃ³n de los saltos y el contacto con plataformas dinÃ¡micas como el barril, se implementÃ³ el mÃ©todo <code>OnDrawGizmosSelected()</code>. Esta funciÃ³n proyecta una esfera verde de alambre en la ventana de <em>Scene</em> del editor, facilitando la calibraciÃ³n visual del radio de detecciÃ³n (<code>groundRadius = 0.1f</code>) en tiempo real.
         </p>
         <p style="font-size:8.2pt; margin:0; color:#1e293b;">
-            <strong>Resultado alcanzado:</strong> Se logró un prototipo 2D responsivo y consistente, con control total en el aire, eliminación completa del salto infinito y una respuesta física sólida en todas las interacciones del nivel.
+            <strong>Resultado alcanzado:</strong> Se logrÃ³ un prototipo 2D responsivo y consistente, con control total en el aire, eliminaciÃ³n completa del salto infinito y una respuesta fÃ­sica sÃ³lida en todas las interacciones del nivel.
         </p>
     </div>
 
     <div class="page-footer">
-        <span>Universidad Continental · Facultad de Ingeniería</span>
-        <span>Steve Fernando Salas Velarde · 2026 &nbsp;·&nbsp; Página 3 de 4</span>
+        <span>Universidad Continental Â· Facultad de IngenierÃ­a</span>
+        <span>Steve Fernando Salas Velarde Â· 2026 &nbsp;Â·&nbsp; PÃ¡gina 3 de 4</span>
     </div>
 </div>
 
 
 <!-- ============================================================
-     PÁGINA 4 — CÓDIGO FUENTE
+     PÃGINA 4 â€” CÃ“DIGO FUENTE
 ============================================================ -->
 <div class="page">
     <div class="page-top-header">
-        <span class="pth-title">Anexo A — Código Fuente: PlayerController.cs</span>
-        <span class="pth-info">Unity 6 · C# · Documentado bloque por bloque</span>
+        <span class="pth-title">Anexo A â€” CÃ³digo Fuente: PlayerController.cs</span>
+        <span class="pth-info">Unity 6 Â· C# Â· Documentado bloque por bloque</span>
     </div>
 
     <div class="sec-head">
         <span class="sec-num">A</span>
         <div class="sec-title-wrap">
-            <p class="sec-title">PlayerController.cs — Controlador Principal del Jugador</p>
-            <p class="sec-sub">209 líneas · Encapsulamiento formal con [SerializeField] · Compatibilidad con Unity 6 linearVelocity API</p>
+            <p class="sec-title">PlayerController.cs â€” Controlador Principal del Jugador</p>
+            <p class="sec-sub">209 lÃ­neas Â· Encapsulamiento formal con [SerializeField] Â· Compatibilidad con Unity 6 linearVelocity API</p>
         </div>
     </div>
 
@@ -809,26 +760,26 @@ using TMPro;
 using UnityEngine.SceneManagement;
 
 /// ===========================================================================
-/// PROYECTO : Hito 1 — Prototipo Funcional 2D y Game Feel
+/// PROYECTO : Hito 1 â€” Prototipo Funcional 2D y Game Feel
 /// SCRIPT   : PlayerController.cs
-/// GESTIONA : Movimiento, salto, detección de suelo, animaciones e interacciones
+/// GESTIONA : Movimiento, salto, detecciÃ³n de suelo, animaciones e interacciones
 /// ===========================================================================
 public class PlayerController : MonoBehaviour
 {
-    // BLOQUE 1 — Variables serializadas (configurables desde el Inspector)
+    // BLOQUE 1 â€” Variables serializadas (configurables desde el Inspector)
 
-    [Header("--- PARÁMETROS DE MOVIMIENTO Y GAME FEEL ---")]
+    [Header("--- PARÃMETROS DE MOVIMIENTO Y GAME FEEL ---")]
     [Tooltip("Velocidad horizontal en unidades Unity/segundo")]
     [SerializeField] private float speed = 2f;
 
     [Tooltip("Fuerza del impulso vertical al saltar")]
     [SerializeField] private float jumpForce = 4f;
 
-    [Header("--- DETECCIÓN FÍSICA DE SUELO ---")]
-    [Tooltip("Transform vacío ubicado en los pies del personaje")]
+    [Header("--- DETECCIÃ“N FÃSICA DE SUELO ---")]
+    [Tooltip("Transform vacÃ­o ubicado en los pies del personaje")]
     [SerializeField] private Transform groundCheck;
 
-    [Tooltip("Radio del círculo de detección de suelo")]
+    [Tooltip("Radio del cÃ­rculo de detecciÃ³n de suelo")]
     [SerializeField] private float groundRadius = 0.1f;
 
     [Tooltip("Capa que define superficies caminables")]
@@ -838,21 +789,21 @@ public class PlayerController : MonoBehaviour
     [Tooltip("Texto TextMeshPro del contador de monedas")]
     [SerializeField] private TMP_Text TextCoins;
 
-    // BLOQUE 2 — Componentes y variables de estado internas
-    private Rigidbody2D rb2D;     // Motor de física 2D (velocidad, gravedad)
-    private Animator animator;    // Máquina de estados de animaciones
+    // BLOQUE 2 â€” Componentes y variables de estado internas
+    private Rigidbody2D rb2D;     // Motor de fÃ­sica 2D (velocidad, gravedad)
+    private Animator animator;    // MÃ¡quina de estados de animaciones
     private float move;           // Input: -1 (izq), 0 (quieto), 1 (der)
-    private bool isGrounded;      // ¿El personaje toca el suelo?
+    private bool isGrounded;      // Â¿El personaje toca el suelo?
     private int coins = 0;        // Contador de monedas recolectadas
 
-    // BLOQUE 3 — Start: inicialización de componentes al cargar la escena
+    // BLOQUE 3 â€” Start: inicializaciÃ³n de componentes al cargar la escena
     void Start()
     {
         rb2D     = GetComponent&lt;Rigidbody2D&gt;();
         animator = GetComponent&lt;Animator&gt;();
     }
 
-    // BLOQUE 4 — Update: lectura de teclado, movimiento, salto y animaciones
+    // BLOQUE 4 â€” Update: lectura de teclado, movimiento, salto y animaciones
     void Update()
     {
         // 4.1 Input sin inercia (GetAxisRaw devuelve exactamente -1, 0 o 1)
@@ -861,15 +812,15 @@ public class PlayerController : MonoBehaviour
         // 4.2 Velocidad horizontal directa; conserva la velocidad vertical Y
         rb2D.linearVelocity = new Vector2(move * speed, rb2D.linearVelocity.y);
 
-        // 4.3 Flip del sprite según la dirección de avance
+        // 4.3 Flip del sprite segÃºn la direcciÃ³n de avance
         if (move != 0)
             transform.localScale = new Vector3(Mathf.Sign(move), 1, 1);
 
-        // 4.4 Salto — solo si el personaje está en el suelo (evita doble salto)
+        // 4.4 Salto â€” solo si el personaje estÃ¡ en el suelo (evita doble salto)
         if (Input.GetButtonDown("Jump") &amp;&amp; isGrounded)
             rb2D.linearVelocity = new Vector2(rb2D.linearVelocity.x, jumpForce);
 
-        // 4.5 Sincronización de parámetros con el Animator
+        // 4.5 SincronizaciÃ³n de parÃ¡metros con el Animator
         if (animator != null)
         {
             animator.SetFloat("Speed",            Mathf.Abs(move));
@@ -878,7 +829,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    // BLOQUE 5 — FixedUpdate: detección física de suelo (ciclo de física fijo)
+    // BLOQUE 5 â€” FixedUpdate: detecciÃ³n fÃ­sica de suelo (ciclo de fÃ­sica fijo)
     void FixedUpdate()
     {
         if (groundCheck != null)
@@ -886,10 +837,10 @@ public class PlayerController : MonoBehaviour
                 groundCheck.position, groundRadius, groundLayer);
     }
 
-    // BLOQUE 6 — OnTriggerEnter2D: colisiones e interacciones con el escenario
+    // BLOQUE 6 â€” OnTriggerEnter2D: colisiones e interacciones con el escenario
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // 6.1 Moneda — destruye el objeto, suma al contador y actualiza la UI
+        // 6.1 Moneda â€” destruye el objeto, suma al contador y actualiza la UI
         if (collision.CompareTag("Coin"))
         {
             Destroy(collision.gameObject);
@@ -897,11 +848,11 @@ public class PlayerController : MonoBehaviour
             if (TextCoins != null) TextCoins.text = coins.ToString();
         }
 
-        // 6.2 Pinchos — reinicia la escena activa de forma inmediata
+        // 6.2 Pinchos â€” reinicia la escena activa de forma inmediata
         if (collision.CompareTag("Spikes"))
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 
-        // 6.3 Bomba/Barril — knockback + animación de explosión + destrucción
+        // 6.3 Bomba/Barril â€” knockback + animaciÃ³n de explosiÃ³n + destrucciÃ³n
         if (collision.CompareTag("Barrel") || collision.CompareTag("Bomb"))
         {
             Vector2 dir = (rb2D.position - (Vector2)collision.transform.position)
@@ -919,7 +870,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    // BLOQUE 7 — OnDrawGizmosSelected: guía visual del radio de suelo en editor
+    // BLOQUE 7 â€” OnDrawGizmosSelected: guÃ­a visual del radio de suelo en editor
     private void OnDrawGizmosSelected()
     {
         if (groundCheck != null)
@@ -932,8 +883,8 @@ public class PlayerController : MonoBehaviour
     </div>
 
     <div class="page-footer">
-        <span>Universidad Continental · Facultad de Ingeniería</span>
-        <span>Steve Fernando Salas Velarde · 2026 &nbsp;·&nbsp; Página 4 de 4</span>
+        <span>Universidad Continental Â· Facultad de IngenierÃ­a</span>
+        <span>Steve Fernando Salas Velarde Â· 2026 &nbsp;Â·&nbsp; PÃ¡gina 4 de 4</span>
     </div>
 </div>
 
