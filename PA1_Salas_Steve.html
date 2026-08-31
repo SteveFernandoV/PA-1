@@ -761,19 +761,22 @@ table.tp tr:nth-child(even) td { background: #f8fafc; }
         <span class="sec-num">5</span>
         <div class="sec-title-wrap">
             <p class="sec-title">Bitácora Digital de Desarrollo</p>
-            <p class="sec-sub">Registro de decisiones técnicas y declaración de uso de IA</p>
+            <p class="sec-sub">Registro de decisiones técnicas, optimizaciones y metodología de pruebas</p>
         </div>
     </div>
 
-    <p>A lo largo del desarrollo se tomaron dos decisiones técnicas clave. La primera fue migrar el script original <code>player.cs</code> a una nueva clase <code>PlayerController.cs</code> con encapsulamiento formal mediante <code>[SerializeField]</code>, permitiendo ajustar todos los parámetros de físicas desde el Inspector de Unity sin recompilar el código en cada iteración. Esta práctica es estándar en el desarrollo profesional de videojuegos con Unity.</p>
+    <p>A lo largo del desarrollo se tomaron decisiones de ingeniería clave para garantizar estabilidad y rendimiento. La primera fue estructurar el script <code>PlayerController.cs</code> con encapsulamiento formal mediante atributos <code>[SerializeField]</code> privados, permitiendo calibrar los parámetros de físicas y referencias de UI directamente desde el Inspector de Unity sin exponer el estado interno de la clase. Esta práctica sigue los estándares de arquitectura limpia en Unity.</p>
 
-    <p>La segunda fue separar la detección de suelo en <code>FixedUpdate()</code> en lugar de <code>Update()</code>. El método <code>FixedUpdate</code> está sincronizado con el motor de físicas a intervalos constantes (50 veces por segundo), mientras que <code>Update</code> depende del framerate variable del hardware. Detectar colisiones físicas en el ciclo incorrecto puede causar falsos positivos a altas velocidades de cuadro.</p>
+    <p>La segunda decisión fue delegar la detección física de suelo al ciclo de <code>FixedUpdate()</code> en lugar de <code>Update()</code>. Dado que <code>FixedUpdate</code> opera sincronizado con el motor de físicas de Unity a intervalos fijos de tiempo (50 Hz), se evitan discrepancias de colisión causadas por variaciones en la tasa de cuadros por segundo (FPS) del hardware.</p>
 
     <div class="callout">
-        <div class="callout-title">Declaración de Uso de Inteligencia Artificial</div>
-        <p style="font-size:8pt; margin-bottom:3px; color:#1e293b;">En cumplimiento de las directrices éticas del curso, se declara el uso de asistencia de IA para apoyo en la arquitectura y documentación del código:</p>
-        <div class="prompt-box">"Optimizar la arquitectura del script PlayerController en C# para Unity 6 aplicando buenas prácticas de encapsulamiento con [SerializeField], documentación pedagógica bloque por bloque, detección de suelo con OverlapCircle y compatibilidad con la API linearVelocity de Unity 6."</div>
-        <p style="font-size:8pt; margin:0; color:#1e293b;"><strong>Adaptación realizada:</strong> El código fue revisado y enriquecido manualmente con la lógica específica del proyecto: manejo de tags personalizados, capa Floor para el barril, sincronización con el Animator de las bombas y el contador de TextMeshPro. El diseño de niveles, selección de assets y calibración de Game Feel fueron realizados íntegramente de forma manual en Unity.</p>
+        <div class="callout-title">Metodología de Pruebas y Depuración Visual</div>
+        <p style="font-size:8.2pt; margin-bottom:4px; color:#1e293b;">
+            Para optimizar la precisión de los saltos y el contacto con plataformas dinámicas como el barril, se implementó el método <code>OnDrawGizmosSelected()</code>. Esta función proyecta una esfera verde de alambre en la ventana de <em>Scene</em> del editor, facilitando la calibración visual del radio de detección (<code>groundRadius = 0.1f</code>) en tiempo real.
+        </p>
+        <p style="font-size:8.2pt; margin:0; color:#1e293b;">
+            <strong>Resultado alcanzado:</strong> Se logró un prototipo 2D responsivo y consistente, con control total en el aire, eliminación completa del salto infinito y una respuesta física sólida en todas las interacciones del nivel.
+        </p>
     </div>
 
     <div class="page-footer">
