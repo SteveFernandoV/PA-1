@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <title>PA1 - Steve Fernando Salas Velarde - Desarrollo de Videojuegos</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@300;400;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Source+Sans+3:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
 @page {
     size: A4 portrait;
@@ -28,7 +28,7 @@ body {
 }
 
 /* =========================================================
-   CARÁTULA
+   CARÁTULA INSTITUCIONAL
 ========================================================= */
 .cover {
     width: 210mm;
@@ -36,190 +36,205 @@ body {
     position: relative;
     overflow: hidden;
     page-break-after: always;
+    background: #ffffff;
 }
 
-.cover-stripe {
+.cover-stripe-left {
     position: absolute;
     left: 0; top: 0; bottom: 0;
-    width: 13mm;
+    width: 14mm;
     background: linear-gradient(180deg, #0c4a6e 0%, #0f766e 100%);
 }
-.cover-stripe-line {
+
+.cover-stripe-accent {
     position: absolute;
-    left: 13mm; top: 0; bottom: 0;
-    width: 3px;
+    left: 14mm; top: 0; bottom: 0;
+    width: 3.5px;
     background: linear-gradient(180deg, #38bdf8 0%, #2dd4bf 100%);
 }
-.cover-bottom {
+
+.cover-bottom-bar {
     position: absolute;
     bottom: 0; left: 0; right: 0;
-    height: 12mm;
+    height: 14mm;
     background: linear-gradient(90deg, #0c4a6e 0%, #0f766e 55%, #0284c7 100%);
     display: flex;
     align-items: center;
-    padding: 0 20mm 0 18mm;
+    padding: 0 22mm 0 20mm;
     justify-content: space-between;
 }
-.cover-bottom-text {
-    color: rgba(255,255,255,0.75);
-    font-size: 7.5pt;
+
+.cover-bottom-bar span {
+    color: rgba(255,255,255,0.85);
+    font-size: 7.8pt;
     font-weight: 600;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
 }
 
-.cover-body {
+.cover-content {
     position: absolute;
-    left: 18mm; top: 0; right: 0; bottom: 12mm;
-    padding: 14mm 20mm 10mm 12mm;
+    left: 20mm; top: 0; right: 0; bottom: 14mm;
+    padding: 16mm 22mm 12mm 14mm;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Encabezado con Logo Vectorial de la Universidad */
+.cover-header {
+    border-bottom: 1.5px solid #cbd5e1;
+    padding-bottom: 14px;
+}
+
+.brand-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.uni-logo-svg {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+}
+
+.brand-text {
     display: flex;
     flex-direction: column;
 }
 
-/* Encabezado universitario */
-.uni-header {
-    padding-bottom: 10px;
-    border-bottom: 1px solid #cbd5e1;
-    margin-bottom: 14px;
-}
-.uni-name-row {
-    display: flex;
-    align-items: center;
-    gap: 9px;
-    margin-bottom: 3px;
-}
-.uni-icon {
-    width: 30px; height: 30px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #0c4a6e, #0f766e);
-    color: #fff;
-    font-weight: 800;
-    font-size: 12pt;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-}
-.uni-name {
+.brand-title {
     font-family: 'Merriweather', Georgia, serif;
-    font-size: 11.5pt;
+    font-size: 13pt;
     font-weight: 700;
     color: #0c4a6e;
+    letter-spacing: 0.2px;
+    text-transform: uppercase;
     margin: 0;
     line-height: 1.2;
 }
-.uni-faculty {
-    font-size: 8pt;
+
+.brand-faculty {
+    font-size: 8.5pt;
     font-weight: 700;
     color: #0f766e;
     text-transform: uppercase;
     letter-spacing: 0.8px;
-    margin-top: 1px;
-}
-.uni-career {
-    font-size: 7.5pt;
-    color: #64748b;
+    margin-top: 2px;
 }
 
-/* Área central de la portada */
+.brand-school {
+    font-size: 7.8pt;
+    color: #64748b;
+    font-weight: 600;
+    margin-top: 1px;
+}
+
+/* Área central de la carátula */
 .cover-center {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 6px 0 12px 0;
+    padding: 10px 0 16px 0;
 }
-.cover-label {
-    font-size: 8pt;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: #0f766e;
-    margin-bottom: 10px;
-    display: flex;
+
+.cover-badge {
+    display: inline-flex;
     align-items: center;
-    gap: 7px;
+    gap: 6px;
+    background-color: #f0fdfa;
+    border: 1.5px solid #0f766e;
+    color: #0f766e;
+    font-size: 8pt;
+    font-weight: 800;
+    padding: 3px 12px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    margin-bottom: 12px;
 }
-.cover-label::before {
-    content: '';
-    display: inline-block;
-    width: 20px; height: 2px;
-    background: #0f766e;
-    border-radius: 2px;
-}
-.cover-title {
+
+.cover-main-title {
     font-family: 'Merriweather', Georgia, serif;
-    font-size: 22pt;
+    font-size: 23pt;
     font-weight: 700;
     color: #0f172a;
-    line-height: 1.15;
-    letter-spacing: -0.3px;
-    margin: 0 0 6px 0;
+    line-height: 1.18;
+    letter-spacing: -0.4px;
+    margin: 0 0 8px 0;
 }
+
 .cover-subtitle {
     font-family: 'Merriweather', Georgia, serif;
-    font-size: 10.5pt;
+    font-size: 11pt;
     font-weight: 400;
     font-style: italic;
     color: #475569;
-    margin: 0 0 3px 0;
+    margin: 0 0 6px 0;
     line-height: 1.35;
 }
-.cover-project-name {
-    font-size: 10pt;
+
+.cover-topic-quote {
+    font-size: 10.5pt;
     font-weight: 700;
     color: #0f766e;
-    border-left: 3px solid #0f766e;
-    padding-left: 9px;
-    margin: 8px 0 18px 0;
+    border-left: 3.5px solid #0f766e;
+    padding-left: 10px;
+    margin: 8px 0 20px 0;
     font-style: italic;
     font-family: 'Merriweather', serif;
 }
 
-/* Tabla de datos del alumno */
-.student-card {
-    border: 1px solid #e2e8f0;
-    border-top: 3px solid #0f766e;
-    border-radius: 0 0 5px 5px;
+/* Tarjeta de información del estudiante */
+.cover-student-card {
     background: #f8fafc;
-    padding: 10px 14px;
+    border: 1px solid #e2e8f0;
+    border-top: 3.5px solid #0f766e;
+    border-radius: 0 0 6px 6px;
+    padding: 12px 16px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.03);
 }
-.student-row {
+
+.student-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 16px;
+}
+
+.student-item {
     display: flex;
-    align-items: baseline;
-    gap: 6px;
-    font-size: 8.5pt;
-    padding: 3.5px 0;
-    border-bottom: 1px solid #f1f5f9;
+    flex-direction: column;
 }
-.student-row:last-child { border-bottom: none; }
+
 .s-label {
+    font-size: 7.2pt;
     font-weight: 700;
     color: #64748b;
-    min-width: 88px;
-    font-size: 7.3pt;
     text-transform: uppercase;
-    letter-spacing: 0.3px;
-    flex-shrink: 0;
+    letter-spacing: 0.4px;
 }
+
 .s-val {
-    font-weight: 600;
+    font-size: 8.8pt;
+    font-weight: 700;
     color: #0f172a;
-    font-size: 8.5pt;
+    margin-top: 1px;
 }
 
 /* =========================================================
-   PÁGINAS DE CONTENIDO
+   PÁGINAS DE CONTENIDO INTERNO
 ========================================================= */
 .page {
     width: 210mm;
     min-height: 297mm;
-    padding: 13mm 18mm 14mm 18mm;
+    padding: 14mm 18mm 14mm 18mm;
     page-break-after: always;
+    position: relative;
+    background: #ffffff;
 }
+
 .page:last-child { page-break-after: avoid; }
 
-/* Cabecera de página */
-.ph {
+/* Cabecera superior */
+.page-top-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -227,53 +242,47 @@ body {
     padding-bottom: 4px;
     margin-bottom: 12px;
 }
-.ph-title {
+
+.pth-title {
     font-family: 'Merriweather', serif;
     font-size: 8.5pt;
     font-weight: 700;
     color: #0f172a;
 }
-.ph-right {
-    font-size: 7pt;
-    color: #94a3b8;
+
+.pth-info {
+    font-size: 7.2pt;
+    color: #64748b;
     font-weight: 600;
     letter-spacing: 0.3px;
 }
 
-/* Pie de página */
-.pf {
-    display: flex;
-    justify-content: space-between;
-    font-size: 7pt;
-    color: #94a3b8;
-    border-top: 1px solid #e2e8f0;
-    padding-top: 5px;
-    margin-top: 10px;
-}
-
-/* Encabezado de sección */
-.sh {
+/* Encabezados de sección */
+.sec-head {
     display: flex;
     align-items: flex-start;
     gap: 8px;
     margin: 12px 0 7px 0;
 }
-.sh-num {
+
+.sec-num {
     font-family: 'Merriweather', serif;
     font-size: 16pt;
     font-weight: 700;
-    color: #e2e8f0;
+    color: #cbd5e1;
     line-height: 1;
     min-width: 20px;
     margin-top: -1px;
     flex-shrink: 0;
 }
-.sh-block {
+
+.sec-title-wrap {
     flex: 1;
     border-bottom: 1px solid #e2e8f0;
     padding-bottom: 3px;
 }
-.sh-name {
+
+.sec-title {
     font-family: 'Merriweather', Georgia, serif;
     font-size: 10pt;
     font-weight: 700;
@@ -281,14 +290,15 @@ body {
     margin: 0;
     line-height: 1.25;
 }
-.sh-sub {
+
+.sec-sub {
     font-size: 7.5pt;
     color: #64748b;
     font-style: italic;
     margin: 0;
 }
 
-/* Texto de cuerpo */
+/* Párrafos */
 p {
     margin: 0 0 6px 0;
     text-align: justify;
@@ -297,53 +307,76 @@ p {
     color: #334155;
     line-height: 1.45;
 }
+
 p strong { color: #0f172a; }
 
-/* Tarjetas de enlace */
-.card-grid {
+/* Tarjetas de enlaces oficiales */
+.links-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 8px;
     margin: 6px 0 10px 0;
 }
-.lcard {
-    border-radius: 5px;
-    padding: 9px 11px;
+
+.link-card {
+    border-radius: 6px;
+    padding: 10px 12px;
     border: 1px solid #e2e8f0;
     background: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
-.lcard.gh { border-top: 3px solid #0f766e; }
-.lcard.yt { border-top: 3px solid #dc2626; }
+
+.link-card.gh {
+    border-top: 3.5px solid #0f766e;
+    background: linear-gradient(180deg, #f0fdfa 0%, #ffffff 60%);
+}
+
+.link-card.yt {
+    border-top: 3.5px solid #dc2626;
+    background: linear-gradient(180deg, #fef2f2 0%, #ffffff 60%);
+}
+
+.lc-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3px;
+}
+
 .lc-name {
     font-weight: 700;
-    font-size: 8.5pt;
+    font-size: 8.6pt;
     color: #0f172a;
-    margin-bottom: 2px;
 }
+
 .lc-badge {
-    display: inline-block;
     font-size: 6.5pt;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.4px;
     padding: 1px 5px;
     border-radius: 3px;
-    margin-bottom: 4px;
 }
-.lc-badge.green { background: #ccfbf1; color: #0f766e; }
-.lc-badge.red   { background: #fee2e2; color: #dc2626; }
+
+.lc-badge.teal { background: #ccfbf1; color: #0f766e; }
+.lc-badge.red  { background: #fee2e2; color: #dc2626; }
+
 .lc-url {
     font-family: 'JetBrains Mono', Consolas, monospace;
-    font-size: 7.5pt;
-    font-weight: 500;
+    font-size: 7.8pt;
+    font-weight: 600;
     display: block;
-    margin-bottom: 3px;
+    margin-bottom: 4px;
     word-break: break-all;
     text-decoration: none;
-    color: #0f766e;
 }
-.lcard.yt .lc-url { color: #dc2626; }
-.lc-text {
+
+.link-card.gh .lc-url { color: #0f766e; }
+.link-card.yt .lc-url { color: #dc2626; }
+
+.lc-desc {
     font-size: 7.6pt;
     color: #64748b;
     line-height: 1.38;
@@ -356,6 +389,7 @@ table.tc {
     font-size: 8pt;
     margin: 6px 0 10px 0;
 }
+
 table.tc th {
     background: #f1f5f9;
     color: #475569;
@@ -367,19 +401,23 @@ table.tc th {
     border: 1px solid #e2e8f0;
     text-align: left;
 }
+
 table.tc td {
     border: 1px solid #e2e8f0;
     padding: 4.5px 8px;
     color: #334155;
     vertical-align: middle;
 }
+
 table.tc tr:nth-child(even) td { background: #f8fafc; }
+
 .tc-hash {
     font-family: 'JetBrains Mono', monospace;
     font-size: 7.4pt;
     color: #0f766e;
     font-weight: 600;
 }
+
 .tc-date { color: #64748b; font-size: 7.6pt; white-space: nowrap; }
 
 /* Tabla de parámetros */
@@ -389,6 +427,7 @@ table.tp {
     font-size: 8pt;
     margin: 6px 0 10px 0;
 }
+
 table.tp th {
     background: #1e293b;
     color: #f8fafc;
@@ -400,6 +439,7 @@ table.tp th {
     border: 1px solid #1e293b;
     text-align: left;
 }
+
 table.tp td {
     border: 1px solid #e2e8f0;
     padding: 5px 8px;
@@ -408,8 +448,10 @@ table.tp td {
     font-size: 8pt;
     line-height: 1.38;
 }
+
 table.tp tr:nth-child(even) td { background: #f8fafc; }
-.mono {
+
+.mono-tag {
     font-family: 'JetBrains Mono', Consolas, monospace;
     background: #f1f5f9;
     color: #0f766e;
@@ -421,7 +463,7 @@ table.tp tr:nth-child(even) td { background: #f8fafc; }
     white-space: nowrap;
 }
 
-/* Callout */
+/* Callout IA */
 .callout {
     border-left: 3px solid #0f766e;
     background: #f0fdfa;
@@ -432,12 +474,14 @@ table.tp tr:nth-child(even) td { background: #f8fafc; }
     color: #1e293b;
     line-height: 1.42;
 }
+
 .callout-title {
     font-weight: 700;
     font-size: 8.8pt;
     margin-bottom: 3px;
     color: #0f172a;
 }
+
 .prompt-box {
     background: #f8fafc;
     border: 1px dashed #cbd5e1;
@@ -451,13 +495,14 @@ table.tp tr:nth-child(even) td { background: #f8fafc; }
     line-height: 1.4;
 }
 
-/* Código */
+/* Bloque de código */
 .code-wrap {
     background: #0f172a;
     border-radius: 6px;
     padding: 10px 12px;
     margin-top: 6px;
 }
+
 .code-wrap pre {
     margin: 0;
     font-family: 'JetBrains Mono', Consolas, monospace;
@@ -466,74 +511,115 @@ table.tp tr:nth-child(even) td { background: #f8fafc; }
     color: #e2e8f0;
     white-space: pre;
 }
+
+/* Pie de página */
+.page-footer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 7pt;
+    color: #94a3b8;
+    border-top: 1px solid #e2e8f0;
+    padding-top: 5px;
+    margin-top: 10px;
+}
 </style>
 </head>
 <body>
 
-<!-- ============================================================ CARÁTULA ============================================================ -->
+<!-- ============================================================
+     PÁGINA 1 — CARÁTULA FORMAL INSTITUCIONAL
+============================================================ -->
 <div class="cover">
-    <div class="cover-stripe"></div>
-    <div class="cover-stripe-line"></div>
-    <div class="cover-bottom">
-        <span class="cover-bottom-text">Perú · 2026</span>
-        <span class="cover-bottom-text">Universidad Continental</span>
+    <div class="cover-stripe-left"></div>
+    <div class="cover-stripe-accent"></div>
+    <div class="cover-bottom-bar">
+        <span>Universidad Continental • Facultad de Ingeniería</span>
+        <span>Perú · 2026</span>
     </div>
 
-    <div class="cover-body">
-        <div class="uni-header">
-            <div class="uni-name-row">
-                <div class="uni-icon">U</div>
-                <h1 class="uni-name">Universidad Continental</h1>
+    <div class="cover-content">
+        <!-- Membrete con Logo Oficial Vectorial -->
+        <div class="cover-header">
+            <div class="brand-row">
+                <!-- SVG Oficial Emblema Continental -->
+                <svg class="uni-logo-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="50" r="48" fill="url(#gradLogo)" stroke="#0c4a6e" stroke-width="2"/>
+                    <path d="M68 32 C58 22 40 22 30 32 C20 42 20 58 30 68 C40 78 58 78 68 68 C72 64 74 58 74 52 L62 52 C62 55 60 59 58 61 C52 67 42 67 36 61 C30 55 30 45 36 39 C42 33 52 33 58 39 C60 41 62 45 62 48 L74 48 C74 42 72 36 68 32 Z" fill="#ffffff"/>
+                    <circle cx="50" cy="50" r="8" fill="#38bdf8"/>
+                    <defs>
+                        <linearGradient id="gradLogo" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#0c4a6e"/>
+                            <stop offset="0.6" stop-color="#0f766e"/>
+                            <stop offset="1" stop-color="#0284c7"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+
+                <div class="brand-text">
+                    <h1 class="brand-title">Universidad Continental</h1>
+                    <div class="brand-faculty">Facultad de Ingeniería</div>
+                    <div class="brand-school">Escuela Profesional de Ingeniería de Sistemas e Informática</div>
+                </div>
             </div>
-            <div class="uni-faculty">Facultad de Ingeniería</div>
-            <div class="uni-career">Escuela Profesional de Ingeniería de Sistemas e Informática</div>
         </div>
 
+        <!-- Área Central del Trabajo -->
         <div class="cover-center">
-            <div class="cover-label">Evaluación de Consolidado 1</div>
-            <h2 class="cover-title">Producto Académico<br>N.º 1</h2>
+            <div class="cover-badge">Evaluación para el Consolidado 1</div>
+            <h2 class="cover-main-title">Producto Académico<br>N.º 1</h2>
             <div class="cover-subtitle">Hito 1: Prototipo Funcional 2D y Game Feel</div>
-            <div class="cover-project-name">"El Laboratorio de Movimiento"</div>
+            <div class="cover-topic-quote">"El Laboratorio de Movimiento"</div>
 
-            <div class="student-card">
-                <div class="student-row">
-                    <span class="s-label">Asignatura</span>
-                    <span class="s-val">Desarrollo de Videojuegos</span>
-                </div>
-                <div class="student-row">
-                    <span class="s-label">Estudiante</span>
-                    <span class="s-val">Steve Fernando Salas Velarde</span>
-                </div>
-                <div class="student-row">
-                    <span class="s-label">Motor</span>
-                    <span class="s-val">Unity 6 (6000.5.10f1) — Universal Render Pipeline 2D</span>
-                </div>
-                <div class="student-row">
-                    <span class="s-label">Repositorio</span>
-                    <span class="s-val">GitHub — github.com/SteveFernandoV/PA-1</span>
-                </div>
-                <div class="student-row">
-                    <span class="s-label">Modalidad</span>
-                    <span class="s-val">Individual — Entrega Digital + Video Defensa</span>
+            <!-- Ficha del Alumno -->
+            <div class="cover-student-card">
+                <div class="student-grid">
+                    <div class="student-item">
+                        <span class="s-label">Asignatura</span>
+                        <span class="s-val">Desarrollo de Videojuegos</span>
+                    </div>
+                    <div class="student-item">
+                        <span class="s-label">Estudiante</span>
+                        <span class="s-val">Steve Fernando Salas Velarde</span>
+                    </div>
+                    <div class="student-item">
+                        <span class="s-label">Motor & Versión</span>
+                        <span class="s-val">Unity 6 (6000.5.10f1) URP 2D</span>
+                    </div>
+                    <div class="student-item">
+                        <span class="s-label">Control de Versiones</span>
+                        <span class="s-val">Git & GitHub (Repositorio Público)</span>
+                    </div>
+                    <div class="student-item">
+                        <span class="s-label">Modalidad</span>
+                        <span class="s-val">Individual — Informe + Video Defensa</span>
+                    </div>
+                    <div class="student-item">
+                        <span class="s-label">Video de Sustentación</span>
+                        <span class="s-val">YouTube (Modo Oculto / No listado)</span>
+                    </div>
                 </div>
             </div>
         </div>
+
+        <div></div>
     </div>
 </div>
 
 
-<!-- ============================================================ PÁGINA 2 — DESCRIPCIÓN, ENLACES Y COMMITS ============================================================ -->
+<!-- ============================================================
+     PÁGINA 2 — INTRODUCCIÓN, ENLACES Y COMMITS
+============================================================ -->
 <div class="page">
-    <div class="ph">
-        <span class="ph-title">Producto Académico N.º 1 — Hito 1</span>
-        <span class="ph-right">Desarrollo de Videojuegos · Universidad Continental</span>
+    <div class="page-top-header">
+        <span class="pth-title">Producto Académico N.º 1 — Hito 1</span>
+        <span class="pth-info">Desarrollo de Videojuegos · Universidad Continental</span>
     </div>
 
-    <div class="sh">
-        <span class="sh-num">1</span>
-        <div class="sh-block">
-            <p class="sh-name">Descripción General del Proyecto</p>
-            <p class="sh-sub">Contexto, objetivos y estructura del prototipo</p>
+    <div class="sec-head">
+        <span class="sec-num">1</span>
+        <div class="sec-title-wrap">
+            <p class="sec-title">Descripción General del Proyecto</p>
+            <p class="sec-sub">Contexto, objetivos y estructura del prototipo</p>
         </div>
     </div>
 
@@ -543,34 +629,39 @@ table.tp tr:nth-child(even) td { background: #f8fafc; }
 
     <p>La arquitectura se organiza en carpetas especializadas: <em>Scripts</em> (lógica C#), <em>Prefab</em> (objetos reutilizables), <em>Scenes</em> (escenario principal), <em>animations</em> (clips y controladores), <em>sprites</em> (atlas del pack "Berie's Adventure") y <em>Music</em> (audio de fondo). El historial de cambios está registrado mediante commits descriptivos y un <em>.gitignore</em> configurado con la plantilla oficial de Unity.</p>
 
-    <div class="sh">
-        <span class="sh-num">2</span>
-        <div class="sh-block">
-            <p class="sh-name">Enlace al Repositorio y Video-Defensa</p>
-            <p class="sh-sub">Recursos de entrega oficial</p>
+    <div class="sec-head">
+        <span class="sec-num">2</span>
+        <div class="sec-title-wrap">
+            <p class="sec-title">Enlaces Oficiales de Entrega del Proyecto</p>
+            <p class="sec-sub">Repositorio y video-defensa técnica sustentatoria</p>
         </div>
     </div>
 
-    <div class="card-grid">
-        <div class="lcard gh">
-            <div class="lc-name">📁 Repositorio de Código en GitHub</div>
-            <span class="lc-badge green">Público · Verificado</span>
-            <a class="lc-url" href="https://github.com/SteveFernandoV/PA-1">https://github.com/SteveFernandoV/PA-1</a>
-            <div class="lc-text">Contiene el proyecto Unity 6 completo, el script <code>PlayerController.cs</code> con documentación exhaustiva bloque por bloque, prefabs configurados, animaciones de explosión cuadro a cuadro, y el <code>.gitignore</code> oficial que excluye <code>Library/</code>, <code>Temp/</code> y <code>Logs/</code>.</div>
+    <div class="links-grid">
+        <div class="link-card gh">
+            <div class="lc-header">
+                <span class="lc-name">📁 Repositorio de Código en GitHub</span>
+                <span class="lc-badge teal">Público · Verificado</span>
+            </div>
+            <a class="lc-url" href="https://github.com/SteveFernandoV/PA-1" target="_blank">https://github.com/SteveFernandoV/PA-1</a>
+            <div class="lc-desc">Contiene el proyecto Unity 6 completo, el script <code>PlayerController.cs</code> con documentación exhaustiva bloque por bloque, prefabs configurados, animaciones de explosión cuadro a cuadro, y el <code>.gitignore</code> oficial que excluye <code>Library/</code>, <code>Temp/</code> y <code>Logs/</code>.</div>
         </div>
-        <div class="lcard yt">
-            <div class="lc-name">🎥 Video-Defensa Técnica (2–3 min)</div>
-            <span class="lc-badge red">YouTube · Oculto</span>
-            <a class="lc-url" href="https://www.youtube.com">[PEGAR AQUÍ EL ENLACE DEL VIDEO]</a>
-            <div class="lc-text">Grabación con cámara web activa mostrando rostro y pantalla de Unity. Incluye demostración de: movimiento responsivo, salto sin doble salto, barril empujable como plataforma, recolección de monedas con UI en tiempo real, y colisión con bombas con animación y knockback.</div>
+
+        <div class="link-card yt">
+            <div class="lc-header">
+                <span class="lc-name">🎥 Video-Defensa Técnica (Sustentación)</span>
+                <span class="lc-badge red">YouTube · Oculto</span>
+            </div>
+            <a class="lc-url" href="https://youtu.be/t0Owgr1oKsA" target="_blank">https://youtu.be/t0Owgr1oKsA</a>
+            <div class="lc-desc">Grabación con cámara web activa mostrando rostro del estudiante y pantalla completa de Unity. Demuestra: movimiento responsivo, salto con detección de suelo, barril empujable como plataforma, recolección de monedas (UI) y bombas con animación de detonación.</div>
         </div>
     </div>
 
-    <div class="sh">
-        <span class="sh-num">3</span>
-        <div class="sh-block">
-            <p class="sh-name">Historial de Control de Versiones (Git)</p>
-            <p class="sh-sub">Commits registrados en el repositorio público — Misión 1 del PA</p>
+    <div class="sec-head">
+        <span class="sec-num">3</span>
+        <div class="sec-title-wrap">
+            <p class="sec-title">Historial de Control de Versiones (Git)</p>
+            <p class="sec-sub">Commits representativos registrados en GitHub — Misión 1</p>
         </div>
     </div>
 
@@ -586,30 +677,32 @@ table.tp tr:nth-child(even) td { background: #f8fafc; }
             <tr><td class="tc-hash">0a0a7f7</td><td class="tc-date">27/08/2026</td><td>Registro inicial del repositorio con estructura base de Unity y archivo .gitignore oficial</td></tr>
             <tr><td class="tc-hash">b646356</td><td class="tc-date">29/08/2026</td><td>Añadido escenario de juego, personaje jugador Berie y pack de recursos gráficos del nivel</td></tr>
             <tr><td class="tc-hash">7c77e02</td><td class="tc-date">29/08/2026</td><td>Misiones 2 y 3: implementado PlayerController con Game Feel responsivo y obstáculo físico empujable</td></tr>
-            <tr><td class="tc-hash">e6d5334</td><td class="tc-date">29/08/2026</td><td>Obstáculos destructibles actualizados a Bombas con animación de explosión de 9 fotogramas y barril físico pesado</td></tr>
+            <tr><td class="tc-hash">e6d5334</td><td class="tc-date">29/08/2026</td><td>Obstáculos destructibles actualizados a Bombas con animación de explosión de 9 fotogramas y barril pesado</td></tr>
             <tr><td class="tc-hash">f5c3ba1</td><td class="tc-date">30/08/2026</td><td>Asignada capa Floor (Layer 3) al barril empujable para permitir subirse y saltar desde su superficie</td></tr>
         </tbody>
     </table>
 
-    <div class="pf">
+    <div class="page-footer">
         <span>Universidad Continental · Facultad de Ingeniería</span>
         <span>Steve Fernando Salas Velarde · 2026 &nbsp;·&nbsp; Página 2 de 4</span>
     </div>
 </div>
 
 
-<!-- ============================================================ PÁGINA 3 — ARQUITECTURA TÉCNICA Y GAME FEEL ============================================================ -->
+<!-- ============================================================
+     PÁGINA 3 — ARQUITECTURA TÉCNICA Y GAME FEEL
+============================================================ -->
 <div class="page">
-    <div class="ph">
-        <span class="ph-title">Arquitectura Técnica — Físicas y Game Feel</span>
-        <span class="ph-right">Desarrollo de Videojuegos · PA N.º 1</span>
+    <div class="page-top-header">
+        <span class="pth-title">Arquitectura Técnica — Físicas y Game Feel</span>
+        <span class="pth-info">Desarrollo de Videojuegos · PA N.º 1</span>
     </div>
 
-    <div class="sh">
-        <span class="sh-num">4</span>
-        <div class="sh-block">
-            <p class="sh-name">Diseño Físico y Calibración del "Game Feel"</p>
-            <p class="sh-sub">Parámetros de movimiento, salto, detección de suelo e interacciones</p>
+    <div class="sec-head">
+        <span class="sec-num">4</span>
+        <div class="sec-title-wrap">
+            <p class="sec-title">Diseño Físico y Calibración del "Game Feel"</p>
+            <p class="sec-sub">Parámetros de movimiento, salto, detección de suelo e interacciones</p>
         </div>
     </div>
 
@@ -628,47 +721,47 @@ table.tp tr:nth-child(even) td { background: #f8fafc; }
         <tbody>
             <tr>
                 <td><strong>Movimiento horizontal</strong></td>
-                <td><span class="mono">speed = 2.0f</span></td>
+                <td><span class="mono-tag">speed = 2.0f</span></td>
                 <td>Velocidad controlable combinada con <code>GetAxisRaw</code>: elimina deslizamiento y aceleración artificial, logrando respuesta táctil inmediata al teclado.</td>
             </tr>
             <tr>
                 <td><strong>Salto</strong></td>
-                <td><span class="mono">jumpForce = 4.0f</span></td>
+                <td><span class="mono-tag">jumpForce = 4.0f</span></td>
                 <td>Asignación directa en el eje Y de <code>linearVelocity</code>. Garantiza parábola de salto consistente, calibrada para alcanzar las plataformas del nivel.</td>
             </tr>
             <tr>
                 <td><strong>Gravedad</strong></td>
-                <td><span class="mono">GravityScale = 1.0</span></td>
+                <td><span class="mono-tag">GravityScale = 1.0</span></td>
                 <td>Escala estándar de Unity elegida tras pruebas comparativas. Valores mayores aceleraban la caída de forma brusca, afectando la lectura del salto.</td>
             </tr>
             <tr>
                 <td><strong>Detección de suelo</strong></td>
-                <td><span class="mono">OverlapCircle (r = 0.1)</span></td>
+                <td><span class="mono-tag">OverlapCircle (r = 0.1)</span></td>
                 <td>Círculo de colisión en <code>groundCheck</code> (pies del personaje) filtrado por <code>groundLayer</code>. Impide estrictamente el doble salto o salto en el aire.</td>
             </tr>
             <tr>
                 <td><strong>Barril empujable / plataforma</strong></td>
-                <td><span class="mono">Mass=3.5 · Damping=3.0</span></td>
+                <td><span class="mono-tag">Mass=3.5 · Damping=3.0</span></td>
                 <td><code>Rigidbody2D</code> dinámico en capa <code>Floor</code> (Layer 3). El jugador puede empujarlo con resistencia física sólida, subirse encima y saltar desde su superficie.</td>
             </tr>
             <tr>
                 <td><strong>Bombas (obstáculos)</strong></td>
-                <td><span class="mono">Knockback = 3.0f</span></td>
+                <td><span class="mono-tag">Knockback = 3.0f</span></td>
                 <td>Al colisionar se calcula el vector opuesto al impacto y se aplica impulso al jugador. Los colliders se desactivan, el Animator habilita la animación de 9 fotogramas y el objeto se destruye tras 0.5 s.</td>
             </tr>
             <tr>
                 <td><strong>Monedas (coleccionables)</strong></td>
-                <td><span class="mono">Trigger 2D + TMP_Text</span></td>
+                <td><span class="mono-tag">Trigger 2D + TMP_Text</span></td>
                 <td>Collider marcado como <em>Is Trigger</em>. Al contacto en <code>OnTriggerEnter2D</code> la moneda se destruye, el contador interno sube y la UI de TextMeshPro se actualiza en tiempo real.</td>
             </tr>
         </tbody>
     </table>
 
-    <div class="sh">
-        <span class="sh-num">5</span>
-        <div class="sh-block">
-            <p class="sh-name">Bitácora Digital de Desarrollo</p>
-            <p class="sh-sub">Registro de decisiones técnicas y declaración de uso de IA</p>
+    <div class="sec-head">
+        <span class="sec-num">5</span>
+        <div class="sec-title-wrap">
+            <p class="sec-title">Bitácora Digital de Desarrollo</p>
+            <p class="sec-sub">Registro de decisiones técnicas y declaración de uso de IA</p>
         </div>
     </div>
 
@@ -683,25 +776,27 @@ table.tp tr:nth-child(even) td { background: #f8fafc; }
         <p style="font-size:8pt; margin:0; color:#1e293b;"><strong>Adaptación realizada:</strong> El código fue revisado y enriquecido manualmente con la lógica específica del proyecto: manejo de tags personalizados, capa Floor para el barril, sincronización con el Animator de las bombas y el contador de TextMeshPro. El diseño de niveles, selección de assets y calibración de Game Feel fueron realizados íntegramente de forma manual en Unity.</p>
     </div>
 
-    <div class="pf">
+    <div class="page-footer">
         <span>Universidad Continental · Facultad de Ingeniería</span>
         <span>Steve Fernando Salas Velarde · 2026 &nbsp;·&nbsp; Página 3 de 4</span>
     </div>
 </div>
 
 
-<!-- ============================================================ PÁGINA 4 — CÓDIGO FUENTE ============================================================ -->
+<!-- ============================================================
+     PÁGINA 4 — CÓDIGO FUENTE
+============================================================ -->
 <div class="page">
-    <div class="ph">
-        <span class="ph-title">Anexo A — Código Fuente: PlayerController.cs</span>
-        <span class="ph-right">Unity 6 · C# · Documentado bloque por bloque</span>
+    <div class="page-top-header">
+        <span class="pth-title">Anexo A — Código Fuente: PlayerController.cs</span>
+        <span class="pth-info">Unity 6 · C# · Documentado bloque por bloque</span>
     </div>
 
-    <div class="sh">
-        <span class="sh-num">A</span>
-        <div class="sh-block">
-            <p class="sh-name">PlayerController.cs — Controlador Principal del Jugador</p>
-            <p class="sh-sub">209 líneas · Encapsulamiento formal con [SerializeField] · Compatibilidad con Unity 6 linearVelocity API</p>
+    <div class="sec-head">
+        <span class="sec-num">A</span>
+        <div class="sec-title-wrap">
+            <p class="sec-title">PlayerController.cs — Controlador Principal del Jugador</p>
+            <p class="sec-sub">209 líneas · Encapsulamiento formal con [SerializeField] · Compatibilidad con Unity 6 linearVelocity API</p>
         </div>
     </div>
 
@@ -833,7 +928,7 @@ public class PlayerController : MonoBehaviour
 }</pre>
     </div>
 
-    <div class="pf">
+    <div class="page-footer">
         <span>Universidad Continental · Facultad de Ingeniería</span>
         <span>Steve Fernando Salas Velarde · 2026 &nbsp;·&nbsp; Página 4 de 4</span>
     </div>
